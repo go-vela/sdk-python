@@ -1,4 +1,6 @@
 # coding: utf-8
+#
+# Copyright (c) 2020 Target Brands, Inc. All rights reserved.
 """
     Vela server
 
