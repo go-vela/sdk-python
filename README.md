@@ -98,8 +98,10 @@ Class | Method | HTTP request | Description
 *AuthenticateApi* | [**authenticate**](docs/AuthenticateApi.md#authenticate) | **GET** /authenticate | 
 *BuildsApi* | [**create_build**](docs/BuildsApi.md#create_build) | **POST** /api/v1/repos/{org}/{repo}/builds | 
 *BuildsApi* | [**delete_build**](docs/BuildsApi.md#delete_build) | **DELETE** /api/v1/repos/{org}/{repo}/builds/{build} | 
+*BuildsApi* | [**get_build**](docs/BuildsApi.md#get_build) | **GET** /api/v1/repos/{org}/{repo}/builds/{build} | 
 *BuildsApi* | [**get_build_logs**](docs/BuildsApi.md#get_build_logs) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/logs | 
 *BuildsApi* | [**get_builds**](docs/BuildsApi.md#get_builds) | **GET** /api/v1/repos/{org}/{repo}/builds | 
+*BuildsApi* | [**get_org_builds**](docs/BuildsApi.md#get_org_builds) | **GET** /api/v1/repos/{org} | 
 *BuildsApi* | [**restart_build**](docs/BuildsApi.md#restart_build) | **POST** /api/v1/repos/{org}/{repo}/builds/{build} | 
 *BuildsApi* | [**update_build**](docs/BuildsApi.md#update_build) | **PUT** /api/v1/repos/{org}/{repo}/builds/{build} | 
 *DeploymentApi* | [**create_deployment**](docs/DeploymentApi.md#create_deployment) | **POST** /api/v1/deployments/{org}/{repo} | 
@@ -113,7 +115,7 @@ Class | Method | HTTP request | Description
 *ReposApi* | [**delete_repo**](docs/ReposApi.md#delete_repo) | **DELETE** /api/v1/repos/{org}/{repo} | 
 *ReposApi* | [**get_repo**](docs/ReposApi.md#get_repo) | **GET** /api/v1/repos/{org}/{repo} | 
 *ReposApi* | [**get_repos**](docs/ReposApi.md#get_repos) | **GET** /api/v1/repos | 
-*ReposApi* | [**repair_repo**](docs/ReposApi.md#repair_repo) | **DELETE** /api/v1/repos/{org}/{repo}/repair | 
+*ReposApi* | [**repair_repo**](docs/ReposApi.md#repair_repo) | **PATCH** /api/v1/repos/{org}/{repo}/repair | 
 *ReposApi* | [**update_repo**](docs/ReposApi.md#update_repo) | **PUT** /api/v1/repos/{org}/{repo} | 
 *RouterApi* | [**base_metrics**](docs/RouterApi.md#base_metrics) | **GET** /metrics | 
 *RouterApi* | [**g_et_get_login**](docs/RouterApi.md#g_et_get_login) | **GET** /login | 
@@ -134,7 +136,7 @@ Class | Method | HTTP request | Description
 *ServicesApi* | [**delete_service_logs**](docs/ServicesApi.md#delete_service_logs) | **DELETE** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service}/logs | 
 *ServicesApi* | [**get_service**](docs/ServicesApi.md#get_service) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service} | 
 *ServicesApi* | [**get_service_logs**](docs/ServicesApi.md#get_service_logs) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service}/logs | 
-*ServicesApi* | [**get_services**](docs/ServicesApi.md#get_services) | **GET** /api/v1/repos/{org}/{repo}/builds/{build} | 
+*ServicesApi* | [**get_services**](docs/ServicesApi.md#get_services) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/services | 
 *ServicesApi* | [**update_service**](docs/ServicesApi.md#update_service) | **PUT** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service} | 
 *ServicesApi* | [**update_service_log**](docs/ServicesApi.md#update_service_log) | **PUT** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service}/logs | 
 *StepsApi* | [**create_step**](docs/StepsApi.md#create_step) | **POST** /api/v1/repos/{org}/{repo}/builds/{build}/steps | 
@@ -162,15 +164,34 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Build](docs/Build.md)
+ - [Container](docs/Container.md)
+ - [ContainerSlice](docs/ContainerSlice.md)
  - [Deployment](docs/Deployment.md)
+ - [Executor](docs/Executor.md)
  - [Log](docs/Log.md)
  - [Login](docs/Login.md)
+ - [PipelineBuild](docs/PipelineBuild.md)
+ - [PipelineMetadata](docs/PipelineMetadata.md)
+ - [PipelineWorker](docs/PipelineWorker.md)
  - [Repo](docs/Repo.md)
+ - [Rules](docs/Rules.md)
+ - [Ruleset](docs/Ruleset.md)
+ - [Ruletype](docs/Ruletype.md)
  - [Secret](docs/Secret.md)
+ - [SecretSlice](docs/SecretSlice.md)
  - [Service](docs/Service.md)
+ - [Stage](docs/Stage.md)
+ - [StageSlice](docs/StageSlice.md)
  - [Step](docs/Step.md)
+ - [StepSecret](docs/StepSecret.md)
+ - [StepSecretSlice](docs/StepSecretSlice.md)
+ - [Ulimit](docs/Ulimit.md)
+ - [UlimitSlice](docs/UlimitSlice.md)
  - [User](docs/User.md)
+ - [Volume](docs/Volume.md)
+ - [VolumeSlice](docs/VolumeSlice.md)
  - [Webhook](docs/Webhook.md)
+ - [Worker](docs/Worker.md)
 
 ## Documentation For Authorization
 
@@ -180,7 +201,7 @@ Class | Method | HTTP request | Description
 - **Type**: API key
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
-
+- **Prefix**: `Bearer`
 
 ## Contributing
 

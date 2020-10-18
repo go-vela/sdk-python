@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **error** | **str** |  | [optional] 
 **event** | **str** |  | [optional] 
 **finished** | **int** |  | [optional] 
+**head_ref** | **str** |  | [optional] 
 **host** | **str** |  | [optional] 
 **id** | **int** |  | [optional] 
 **link** | **str** |  | [optional] 

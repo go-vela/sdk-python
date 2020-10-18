@@ -3,14 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**allow_command** | **bool** |  | [optional] 
-**events** | **list[str]** |  | [optional] 
-**id** | **int** |  | [optional] 
-**images** | **list[str]** |  | [optional] 
+**engine** | **str** |  | [optional] 
+**key** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
-**org** | **str** |  | [optional] 
-**repo** | **str** |  | [optional] 
-**team** | **str** |  | [optional] 
+**origin** | [**Container**](Container.md) |  | [optional] 
 **type** | **str** |  | [optional] 
 **value** | **str** |  | [optional] 
 

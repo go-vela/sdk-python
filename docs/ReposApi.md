@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**delete_repo**](ReposApi.md#delete_repo) | **DELETE** /api/v1/repos/{org}/{repo} | 
 [**get_repo**](ReposApi.md#get_repo) | **GET** /api/v1/repos/{org}/{repo} | 
 [**get_repos**](ReposApi.md#get_repos) | **GET** /api/v1/repos | 
-[**repair_repo**](ReposApi.md#repair_repo) | **DELETE** /api/v1/repos/{org}/{repo}/repair | 
+[**repair_repo**](ReposApi.md#repair_repo) | **PATCH** /api/v1/repos/{org}/{repo}/repair | 
 [**update_repo**](ReposApi.md#update_repo) | **PUT** /api/v1/repos/{org}/{repo} | 
 
 # **chown_repo**
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 
-Remove and recreate the webhook for a repo
+Change the owner of the webhook for a repo
 
 ### Example
 ```python

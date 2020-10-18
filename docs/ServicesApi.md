@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**delete_service_logs**](ServicesApi.md#delete_service_logs) | **DELETE** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service}/logs | 
 [**get_service**](ServicesApi.md#get_service) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service} | 
 [**get_service_logs**](ServicesApi.md#get_service_logs) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service}/logs | 
-[**get_services**](ServicesApi.md#get_services) | **GET** /api/v1/repos/{org}/{repo}/builds/{build} | 
+[**get_services**](ServicesApi.md#get_services) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/services | 
 [**update_service**](ServicesApi.md#update_service) | **PUT** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service} | 
 [**update_service_log**](ServicesApi.md#update_service_log) | **PUT** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service}/logs | 
 

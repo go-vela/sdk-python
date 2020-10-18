@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieve the logs for a step
+Delete the logs for a step
 
 ### Example
 ```python
