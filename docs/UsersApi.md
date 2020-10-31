@@ -371,7 +371,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_users**
-> User get_users()
+> list[User] get_users()
 
 
 
@@ -406,7 +406,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**User**](User.md)
+[**list[User]**](User.md)
 
 ### Authorization
 

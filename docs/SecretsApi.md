@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_secrets**
-> Secret get_secrets(engine, org, type, name)
+> list[Secret] get_secrets(engine, org, type, name)
 
 Retrieve a list of secrets from the configured backend.
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Secret**](Secret.md)
+[**list[Secret]**](Secret.md)
 
 ### Authorization
 

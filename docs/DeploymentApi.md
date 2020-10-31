@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**get_hooks**](DeploymentApi.md#get_hooks) | **GET** /api/v1/hooks/{org}/{repo} | 
 
 # **create_deployment**
-> Build create_deployment(repo, org)
+> Deployment create_deployment(repo, org)
 
 
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Build**](Build.md)
+[**Deployment**](Deployment.md)
 
 ### Authorization
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_deployments**
-> Deployment get_deployments(repo, org)
+> list[Deployment] get_deployments(repo, org)
 
 
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Deployment**](Deployment.md)
+[**list[Deployment]**](Deployment.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_hooks**
-> Webhook get_hooks(repo, org)
+> list[Webhook] get_hooks(repo, org)
 
 
 
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Webhook**](Webhook.md)
+[**list[Webhook]**](Webhook.md)
 
 ### Authorization
 

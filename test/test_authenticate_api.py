@@ -1,8 +1,6 @@
 # coding: utf-8
 #
 # Copyright (c) 2020 Target Brands, Inc. All rights reserved.
-#
-# Copyright (c) 2020 Target Brands, Inc. All rights reserved.
 
 """
     Vela server
@@ -32,8 +30,32 @@ class TestAuthenticateApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_authenticate(self):
-        """Test case for authenticate
+    def test_get_authenticate(self):
+        """Test case for get_authenticate
+
+        """
+        pass
+
+    def test_get_login(self):
+        """Test case for get_login
+
+        """
+        pass
+
+    def test_logout(self):
+        """Test case for logout
+
+        """
+        pass
+
+    def test_post_authenticate(self):
+        """Test case for post_authenticate
+
+        """
+        pass
+
+    def test_post_login(self):
+        """Test case for post_login
 
         """
         pass

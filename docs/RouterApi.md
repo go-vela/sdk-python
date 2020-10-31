@@ -5,11 +5,8 @@ All URIs are relative to *http://localhost/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**base_metrics**](RouterApi.md#base_metrics) | **GET** /metrics | 
-[**g_et_get_login**](RouterApi.md#g_et_get_login) | **GET** /login | 
-[**g_et_logout**](RouterApi.md#g_et_logout) | **GET** /logout | 
 [**get_badge**](RouterApi.md#get_badge) | **GET** /badge/{org}/{repo}/status.svg | 
 [**health**](RouterApi.md#health) | **GET** /health | 
-[**p_ost_login**](RouterApi.md#p_ost_login) | **POST** /login | 
 [**post_webhook**](RouterApi.md#post_webhook) | **POST** /webhook | 
 [**version**](RouterApi.md#version) | **GET** /version | 
 
@@ -44,90 +41,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 **str**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **g_et_get_login**
-> g_et_get_login()
-
-
-
-Log into the Vela api
-
-### Example
-```python
-from __future__ import print_function
-import time
-import vela
-from vela.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = vela.RouterApi()
-
-try:
-    api_instance.g_et_get_login()
-except ApiException as e:
-    print("Exception when calling RouterApi->g_et_get_login: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **g_et_logout**
-> g_et_logout()
-
-
-
-Log into the Vela api
-
-### Example
-```python
-from __future__ import print_function
-import time
-import vela
-from vela.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = vela.RouterApi()
-
-try:
-    api_instance.g_et_logout()
-except ApiException as e:
-    print("Exception when calling RouterApi->g_et_logout: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
 
 ### Authorization
 
@@ -228,53 +141,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **p_ost_login**
-> str p_ost_login(body)
-
-
-
-Login to the Vela api
-
-### Example
-```python
-from __future__ import print_function
-import time
-import vela
-from vela.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = vela.RouterApi()
-body = vela.Login() # Login | Login payload that we expect from the user
-
-try:
-    api_response = api_instance.p_ost_login(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling RouterApi->p_ost_login: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**Login**](Login.md)| Login payload that we expect from the user | 
-
-### Return type
-
-**str**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

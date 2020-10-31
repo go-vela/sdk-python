@@ -44,7 +44,7 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: Build
+        :return: list[Build]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -65,7 +65,7 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: Build
+        :return: list[Build]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -113,7 +113,7 @@ class AdminApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Build',  # noqa: E501
+            response_type='list[Build]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -218,7 +218,7 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: Webhook
+        :return: list[Webhook]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -239,7 +239,7 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: Webhook
+        :return: list[Webhook]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -287,7 +287,7 @@ class AdminApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Webhook',  # noqa: E501
+            response_type='list[Webhook]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -305,7 +305,7 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: Repo
+        :return: list[Repo]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -326,7 +326,7 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: Repo
+        :return: list[Repo]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -374,7 +374,7 @@ class AdminApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Repo',  # noqa: E501
+            response_type='list[Repo]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -392,7 +392,7 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: Secret
+        :return: list[Secret]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -413,7 +413,7 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: Secret
+        :return: list[Secret]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -461,7 +461,7 @@ class AdminApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Secret',  # noqa: E501
+            response_type='list[Secret]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -479,7 +479,7 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: Service
+        :return: list[Service]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -500,7 +500,7 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: Service
+        :return: list[Service]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -548,7 +548,7 @@ class AdminApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Service',  # noqa: E501
+            response_type='list[Service]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -566,7 +566,7 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: Step
+        :return: list[Step]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -587,7 +587,7 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: Step
+        :return: list[Step]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -635,7 +635,7 @@ class AdminApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Step',  # noqa: E501
+            response_type='list[Step]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -653,7 +653,7 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: User
+        :return: list[User]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -674,7 +674,7 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :return: User
+        :return: list[User]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -722,7 +722,7 @@ class AdminApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='User',  # noqa: E501
+            response_type='list[User]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

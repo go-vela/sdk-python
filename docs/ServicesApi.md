@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_services**
-> Service get_services(repo, org, build)
+> list[Service] get_services(repo, org, build)
 
 
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Service**](Service.md)
+[**list[Service]**](Service.md)
 
 ### Authorization
 
