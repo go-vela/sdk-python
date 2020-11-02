@@ -17,45 +17,45 @@ from __future__ import absolute_import
 import unittest
 
 import vela
-from vela.vela.router_api import RouterApi  # noqa: E501
+from vela.vela.workers_api import WorkersApi  # noqa: E501
 from vela.rest import ApiException
 
 
-class TestRouterApi(unittest.TestCase):
-    """RouterApi unit test stubs"""
+class TestWorkersApi(unittest.TestCase):
+    """WorkersApi unit test stubs"""
 
     def setUp(self):
-        self.api = RouterApi()  # noqa: E501
+        self.api = WorkersApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
-    def test_base_metrics(self):
-        """Test case for base_metrics
+    def test_create_worker(self):
+        """Test case for create_worker
 
         """
         pass
 
-    def test_get_badge(self):
-        """Test case for get_badge
+    def test_delete_worker(self):
+        """Test case for delete_worker
 
         """
         pass
 
-    def test_health(self):
-        """Test case for health
+    def test_get_worker(self):
+        """Test case for get_worker
 
         """
         pass
 
-    def test_post_webhook(self):
-        """Test case for post_webhook
+    def test_get_workers(self):
+        """Test case for get_workers
 
         """
         pass
 
-    def test_version(self):
-        """Test case for version
+    def test_update_worker(self):
+        """Test case for update_worker
 
         """
         pass

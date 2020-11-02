@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_builds**
-> Build get_builds(repo, org)
+> list[Build] get_builds(repo, org)
 
 
 
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Build**](Build.md)
+[**list[Build]**](Build.md)
 
 ### Authorization
 
@@ -297,7 +297,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_org_builds**
-> Build get_org_builds(org, authorization)
+> list[Build] get_org_builds(org, authorization)
 
 
 
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Build**](Build.md)
+[**list[Build]**](Build.md)
 
 ### Authorization
 

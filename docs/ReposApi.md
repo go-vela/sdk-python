@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_repos**
-> Repo get_repos()
+> list[Repo] get_repos()
 
 
 
@@ -266,7 +266,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Repo**](Repo.md)
+[**list[Repo]**](Repo.md)
 
 ### Authorization
 

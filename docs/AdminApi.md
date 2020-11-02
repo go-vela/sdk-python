@@ -22,7 +22,7 @@ Method | HTTP request | Description
 [**admin_update_user**](AdminApi.md#admin_update_user) | **PUT** /api/v1/admin/user | 
 
 # **admin_all_builds**
-> Build admin_all_builds()
+> list[Build] admin_all_builds()
 
 
 
@@ -57,7 +57,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Build**](Build.md)
+[**list[Build]**](Build.md)
 
 ### Authorization
 
@@ -113,7 +113,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **admin_all_hooks**
-> Webhook admin_all_hooks()
+> list[Webhook] admin_all_hooks()
 
 
 
@@ -148,7 +148,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Webhook**](Webhook.md)
+[**list[Webhook]**](Webhook.md)
 
 ### Authorization
 
@@ -162,7 +162,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **admin_all_repos**
-> Repo admin_all_repos()
+> list[Repo] admin_all_repos()
 
 
 
@@ -197,7 +197,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Repo**](Repo.md)
+[**list[Repo]**](Repo.md)
 
 ### Authorization
 
@@ -211,7 +211,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **admin_all_secrets**
-> Secret admin_all_secrets()
+> list[Secret] admin_all_secrets()
 
 
 
@@ -246,7 +246,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Secret**](Secret.md)
+[**list[Secret]**](Secret.md)
 
 ### Authorization
 
@@ -260,7 +260,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **admin_all_services**
-> Service admin_all_services()
+> list[Service] admin_all_services()
 
 
 
@@ -295,7 +295,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Service**](Service.md)
+[**list[Service]**](Service.md)
 
 ### Authorization
 
@@ -309,7 +309,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **admin_all_steps**
-> Step admin_all_steps()
+> list[Step] admin_all_steps()
 
 
 
@@ -344,7 +344,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Step**](Step.md)
+[**list[Step]**](Step.md)
 
 ### Authorization
 
@@ -358,7 +358,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **admin_all_users**
-> User admin_all_users()
+> list[User] admin_all_users()
 
 
 
@@ -393,7 +393,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**User**](User.md)
+[**list[User]**](User.md)
 
 ### Authorization
 

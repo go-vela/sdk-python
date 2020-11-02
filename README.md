@@ -95,7 +95,11 @@ Class | Method | HTTP request | Description
 *AdminApi* | [**admin_update_service**](docs/AdminApi.md#admin_update_service) | **PUT** /api/v1/admin/service | 
 *AdminApi* | [**admin_update_step**](docs/AdminApi.md#admin_update_step) | **PUT** /api/v1/admin/step | 
 *AdminApi* | [**admin_update_user**](docs/AdminApi.md#admin_update_user) | **PUT** /api/v1/admin/user | 
-*AuthenticateApi* | [**authenticate**](docs/AuthenticateApi.md#authenticate) | **GET** /authenticate | 
+*AuthenticateApi* | [**get_authenticate**](docs/AuthenticateApi.md#get_authenticate) | **GET** /authenticate | 
+*AuthenticateApi* | [**get_login**](docs/AuthenticateApi.md#get_login) | **GET** /login | 
+*AuthenticateApi* | [**logout**](docs/AuthenticateApi.md#logout) | **GET** /logout | 
+*AuthenticateApi* | [**post_authenticate**](docs/AuthenticateApi.md#post_authenticate) | **POST** /authenticate | 
+*AuthenticateApi* | [**post_login**](docs/AuthenticateApi.md#post_login) | **POST** /login | 
 *BuildsApi* | [**create_build**](docs/BuildsApi.md#create_build) | **POST** /api/v1/repos/{org}/{repo}/builds | 
 *BuildsApi* | [**delete_build**](docs/BuildsApi.md#delete_build) | **DELETE** /api/v1/repos/{org}/{repo}/builds/{build} | 
 *BuildsApi* | [**get_build**](docs/BuildsApi.md#get_build) | **GET** /api/v1/repos/{org}/{repo}/builds/{build} | 
@@ -118,11 +122,8 @@ Class | Method | HTTP request | Description
 *ReposApi* | [**repair_repo**](docs/ReposApi.md#repair_repo) | **PATCH** /api/v1/repos/{org}/{repo}/repair | 
 *ReposApi* | [**update_repo**](docs/ReposApi.md#update_repo) | **PUT** /api/v1/repos/{org}/{repo} | 
 *RouterApi* | [**base_metrics**](docs/RouterApi.md#base_metrics) | **GET** /metrics | 
-*RouterApi* | [**g_et_get_login**](docs/RouterApi.md#g_et_get_login) | **GET** /login | 
-*RouterApi* | [**g_et_logout**](docs/RouterApi.md#g_et_logout) | **GET** /logout | 
 *RouterApi* | [**get_badge**](docs/RouterApi.md#get_badge) | **GET** /badge/{org}/{repo}/status.svg | 
 *RouterApi* | [**health**](docs/RouterApi.md#health) | **GET** /health | 
-*RouterApi* | [**p_ost_login**](docs/RouterApi.md#p_ost_login) | **POST** /login | 
 *RouterApi* | [**post_webhook**](docs/RouterApi.md#post_webhook) | **POST** /webhook | 
 *RouterApi* | [**version**](docs/RouterApi.md#version) | **GET** /version | 
 *SecretsApi* | [**create_secret**](docs/SecretsApi.md#create_secret) | **POST** /api/v1/secrets/{engine}/{type}/{org}/{name} | 
@@ -160,6 +161,11 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**update_user**](docs/UsersApi.md#update_user) | **PUT** /api/v1/users/{user} | 
 *WebhookApi* | [**create_hook**](docs/WebhookApi.md#create_hook) | **POST** /api/v1/hooks/{org}/{repo} | 
 *WebhookApi* | [**update_hook**](docs/WebhookApi.md#update_hook) | **PUT** /api/v1/hooks/{org}/{repo}/{hook} | 
+*WorkersApi* | [**create_worker**](docs/WorkersApi.md#create_worker) | **POST** /api/v1/workers | 
+*WorkersApi* | [**delete_worker**](docs/WorkersApi.md#delete_worker) | **DELETE** /api/v1/workers/{worker} | 
+*WorkersApi* | [**get_worker**](docs/WorkersApi.md#get_worker) | **GET** /api/v1/workers/{worker} | 
+*WorkersApi* | [**get_workers**](docs/WorkersApi.md#get_workers) | **GET** /api/v1/workers | 
+*WorkersApi* | [**update_worker**](docs/WorkersApi.md#update_worker) | **PUT** /api/v1/workers/{worker} |
 
 ## Documentation For Models
 

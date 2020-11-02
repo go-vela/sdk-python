@@ -28,6 +28,7 @@ from vela.vela.services_api import ServicesApi
 from vela.vela.steps_api import StepsApi
 from vela.vela.users_api import UsersApi
 from vela.vela.webhook_api import WebhookApi
+from vela.vela.workers_api import WorkersApi
 # import ApiClient
 from vela.api_client import ApiClient
 from vela.configuration import Configuration

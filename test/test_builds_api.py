@@ -1,8 +1,6 @@
 # coding: utf-8
 #
 # Copyright (c) 2020 Target Brands, Inc. All rights reserved.
-#
-# Copyright (c) 2020 Target Brands, Inc. All rights reserved.
 
 """
     Vela server
@@ -58,6 +56,12 @@ class TestBuildsApi(unittest.TestCase):
 
     def test_get_builds(self):
         """Test case for get_builds
+
+        """
+        pass
+
+    def test_get_org_builds(self):
+        """Test case for get_org_builds
 
         """
         pass
