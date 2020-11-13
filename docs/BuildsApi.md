@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**update_build**](BuildsApi.md#update_build) | **PUT** /api/v1/repos/{org}/{repo}/builds/{build} | 
 
 # **create_build**
-> Build create_build(body, repo, org)
+> Build create_build(body, org, repo)
 
 
 
@@ -37,11 +37,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = vela.BuildsApi(vela.ApiClient(configuration))
 body = vela.Build() # Build | Payload containing the build to update
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 
 try:
-    api_response = api_instance.create_build(body, repo, org)
+    api_response = api_instance.create_build(body, org, repo)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildsApi->create_build: %s\n" % e)
@@ -52,8 +52,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Build**](Build.md)| Payload containing the build to update | 
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
 
 ### Return type
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_build**
-> str delete_build(repo, org, build)
+> str delete_build(org, repo, build)
 
 
 
@@ -93,12 +93,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.BuildsApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number to restart
 
 try:
-    api_response = api_instance.delete_build(repo, org, build)
+    api_response = api_instance.delete_build(org, repo, build)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildsApi->delete_build: %s\n" % e)
@@ -108,8 +108,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number to restart | 
 
 ### Return type
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_build**
-> Build get_build(repo, org, build)
+> Build get_build(org, repo, build)
 
 
 
@@ -150,12 +150,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.BuildsApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number to restart
 
 try:
-    api_response = api_instance.get_build(repo, org, build)
+    api_response = api_instance.get_build(org, repo, build)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildsApi->get_build: %s\n" % e)
@@ -165,8 +165,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number to restart | 
 
 ### Return type
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_build_logs**
-> Log get_build_logs(repo, org, build)
+> list[Log] get_build_logs(org, repo, build)
 
 
 
@@ -207,12 +207,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.BuildsApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number to restart
 
 try:
-    api_response = api_instance.get_build_logs(repo, org, build)
+    api_response = api_instance.get_build_logs(org, repo, build)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildsApi->get_build_logs: %s\n" % e)
@@ -222,13 +222,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number to restart | 
 
 ### Return type
 
-[**Log**](Log.md)
+[**list[Log]**](Log.md)
 
 ### Authorization
 
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_builds**
-> list[Build] get_builds(repo, org)
+> list[Build] get_builds(org, repo)
 
 
 
@@ -264,11 +264,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.BuildsApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 
 try:
-    api_response = api_instance.get_builds(repo, org)
+    api_response = api_instance.get_builds(org, repo)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildsApi->get_builds: %s\n" % e)
@@ -278,8 +278,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
 
 ### Return type
 
@@ -346,7 +346,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **restart_build**
-> Build restart_build(repo, org, build)
+> Build restart_build(org, repo, build)
 
 
 
@@ -368,12 +368,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.BuildsApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number to restart
 
 try:
-    api_response = api_instance.restart_build(repo, org, build)
+    api_response = api_instance.restart_build(org, repo, build)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildsApi->restart_build: %s\n" % e)
@@ -383,8 +383,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number to restart | 
 
 ### Return type
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_build**
-> Build update_build(body, repo, org, build)
+> Build update_build(body, org, repo, build)
 
 
 
@@ -426,12 +426,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = vela.BuildsApi(vela.ApiClient(configuration))
 body = vela.Build() # Build | Payload containing the build to update
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number to restart
 
 try:
-    api_response = api_instance.update_build(body, repo, org, build)
+    api_response = api_instance.update_build(body, org, repo, build)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BuildsApi->update_build: %s\n" % e)
@@ -442,8 +442,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Build**](Build.md)| Payload containing the build to update | 
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number to restart | 
 
 ### Return type

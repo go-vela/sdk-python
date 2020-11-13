@@ -121,47 +121,47 @@ class RouterApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_badge(self, repo, org, **kwargs):  # noqa: E501
+    def get_badge(self, org, repo, **kwargs):  # noqa: E501
         """get_badge  # noqa: E501
 
         Get a badge for the repo  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_badge(repo, org, async_req=True)
+        >>> thread = api.get_badge(org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo to get the badge for (required)
         :param str org: Name of the org the repo belongs to (required)
+        :param str repo: Name of the repo to get the badge for (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_badge_with_http_info(repo, org, **kwargs)  # noqa: E501
+            return self.get_badge_with_http_info(org, repo, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_badge_with_http_info(repo, org, **kwargs)  # noqa: E501
+            (data) = self.get_badge_with_http_info(org, repo, **kwargs)  # noqa: E501
             return data
 
-    def get_badge_with_http_info(self, repo, org, **kwargs):  # noqa: E501
+    def get_badge_with_http_info(self, org, repo, **kwargs):  # noqa: E501
         """get_badge  # noqa: E501
 
         Get a badge for the repo  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_badge_with_http_info(repo, org, async_req=True)
+        >>> thread = api.get_badge_with_http_info(org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo to get the badge for (required)
         :param str org: Name of the org the repo belongs to (required)
+        :param str repo: Name of the repo to get the badge for (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org']  # noqa: E501
+        all_params = ['org', 'repo']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -176,22 +176,22 @@ class RouterApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `get_badge`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `get_badge`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `get_badge`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
 
         query_params = []
 

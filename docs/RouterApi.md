@@ -54,7 +54,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_badge**
-> str get_badge(repo, org)
+> str get_badge(org, repo)
 
 
 
@@ -70,11 +70,11 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = vela.RouterApi()
-repo = 'repo_example' # str | Name of the repo to get the badge for
 org = 'org_example' # str | Name of the org the repo belongs to
+repo = 'repo_example' # str | Name of the repo to get the badge for
 
 try:
-    api_response = api_instance.get_badge(repo, org)
+    api_response = api_instance.get_badge(org, repo)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RouterApi->get_badge: %s\n" % e)
@@ -84,8 +84,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo to get the badge for | 
  **org** | **str**| Name of the org the repo belongs to | 
+ **repo** | **str**| Name of the repo to get the badge for | 
 
 ### Return type
 

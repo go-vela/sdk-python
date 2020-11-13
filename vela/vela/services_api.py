@@ -34,19 +34,19 @@ class ServicesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_service(self, body, repo, org, build, **kwargs):  # noqa: E501
+    def create_service(self, body, org, repo, build, **kwargs):  # noqa: E501
         """create_service  # noqa: E501
 
         Create a service for a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_service(body, repo, org, build, async_req=True)
+        >>> thread = api.create_service(body, org, repo, build, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Service body: Payload containing the service to create (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :return: Service
                  If the method is called asynchronously,
@@ -54,31 +54,31 @@ class ServicesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_service_with_http_info(body, repo, org, build, **kwargs)  # noqa: E501
+            return self.create_service_with_http_info(body, org, repo, build, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_service_with_http_info(body, repo, org, build, **kwargs)  # noqa: E501
+            (data) = self.create_service_with_http_info(body, org, repo, build, **kwargs)  # noqa: E501
             return data
 
-    def create_service_with_http_info(self, body, repo, org, build, **kwargs):  # noqa: E501
+    def create_service_with_http_info(self, body, org, repo, build, **kwargs):  # noqa: E501
         """create_service  # noqa: E501
 
         Create a service for a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_service_with_http_info(body, repo, org, build, async_req=True)
+        >>> thread = api.create_service_with_http_info(body, org, repo, build, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Service body: Payload containing the service to create (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :return: Service
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'repo', 'org', 'build']  # noqa: E501
+        all_params = ['body', 'org', 'repo', 'build']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -97,14 +97,14 @@ class ServicesApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `create_service`")  # noqa: E501
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `create_service`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `create_service`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `create_service`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -113,10 +113,10 @@ class ServicesApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
 
@@ -157,53 +157,53 @@ class ServicesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_service_logs(self, body, repo, org, build, service, **kwargs):  # noqa: E501
+    def create_service_logs(self, body, org, repo, build, service, **kwargs):  # noqa: E501
         """create_service_logs  # noqa: E501
 
         Create the logs for a service  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_service_logs(body, repo, org, build, service, async_req=True)
+        >>> thread = api.create_service_logs(body, org, repo, build, service, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Log body: Payload containing the log to create (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
-        :param int service: Name of the service (required)
+        :param int service: ID of the service (required)
         :return: Log
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_service_logs_with_http_info(body, repo, org, build, service, **kwargs)  # noqa: E501
+            return self.create_service_logs_with_http_info(body, org, repo, build, service, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_service_logs_with_http_info(body, repo, org, build, service, **kwargs)  # noqa: E501
+            (data) = self.create_service_logs_with_http_info(body, org, repo, build, service, **kwargs)  # noqa: E501
             return data
 
-    def create_service_logs_with_http_info(self, body, repo, org, build, service, **kwargs):  # noqa: E501
+    def create_service_logs_with_http_info(self, body, org, repo, build, service, **kwargs):  # noqa: E501
         """create_service_logs  # noqa: E501
 
         Create the logs for a service  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_service_logs_with_http_info(body, repo, org, build, service, async_req=True)
+        >>> thread = api.create_service_logs_with_http_info(body, org, repo, build, service, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Log body: Payload containing the log to create (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
-        :param int service: Name of the service (required)
+        :param int service: ID of the service (required)
         :return: Log
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'repo', 'org', 'build', 'service']  # noqa: E501
+        all_params = ['body', 'org', 'repo', 'build', 'service']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -222,14 +222,14 @@ class ServicesApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `create_service_logs`")  # noqa: E501
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `create_service_logs`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `create_service_logs`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `create_service_logs`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -242,10 +242,10 @@ class ServicesApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
         if 'service' in params:
@@ -288,18 +288,18 @@ class ServicesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_service(self, repo, org, build, service, **kwargs):  # noqa: E501
+    def delete_service(self, org, repo, build, service, **kwargs):  # noqa: E501
         """delete_service  # noqa: E501
 
         Delete a service for a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_service(repo, org, build, service, async_req=True)
+        >>> thread = api.delete_service(org, repo, build, service, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param int service: Name of the service (required)
         :return: str
@@ -308,23 +308,23 @@ class ServicesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_service_with_http_info(repo, org, build, service, **kwargs)  # noqa: E501
+            return self.delete_service_with_http_info(org, repo, build, service, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_service_with_http_info(repo, org, build, service, **kwargs)  # noqa: E501
+            (data) = self.delete_service_with_http_info(org, repo, build, service, **kwargs)  # noqa: E501
             return data
 
-    def delete_service_with_http_info(self, repo, org, build, service, **kwargs):  # noqa: E501
+    def delete_service_with_http_info(self, org, repo, build, service, **kwargs):  # noqa: E501
         """delete_service  # noqa: E501
 
         Delete a service for a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_service_with_http_info(repo, org, build, service, async_req=True)
+        >>> thread = api.delete_service_with_http_info(org, repo, build, service, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param int service: Name of the service (required)
         :return: str
@@ -332,7 +332,7 @@ class ServicesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org', 'build', 'service']  # noqa: E501
+        all_params = ['org', 'repo', 'build', 'service']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -347,14 +347,14 @@ class ServicesApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `delete_service`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `delete_service`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `delete_service`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -367,10 +367,10 @@ class ServicesApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
         if 'service' in params:
@@ -407,51 +407,51 @@ class ServicesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_service_logs(self, repo, org, build, service, **kwargs):  # noqa: E501
+    def delete_service_logs(self, org, repo, build, service, **kwargs):  # noqa: E501
         """delete_service_logs  # noqa: E501
 
         Delete the logs for a service  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_service_logs(repo, org, build, service, async_req=True)
+        >>> thread = api.delete_service_logs(org, repo, build, service, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
-        :param int service: Name of the service (required)
+        :param int service: ID of the service (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_service_logs_with_http_info(repo, org, build, service, **kwargs)  # noqa: E501
+            return self.delete_service_logs_with_http_info(org, repo, build, service, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_service_logs_with_http_info(repo, org, build, service, **kwargs)  # noqa: E501
+            (data) = self.delete_service_logs_with_http_info(org, repo, build, service, **kwargs)  # noqa: E501
             return data
 
-    def delete_service_logs_with_http_info(self, repo, org, build, service, **kwargs):  # noqa: E501
+    def delete_service_logs_with_http_info(self, org, repo, build, service, **kwargs):  # noqa: E501
         """delete_service_logs  # noqa: E501
 
         Delete the logs for a service  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_service_logs_with_http_info(repo, org, build, service, async_req=True)
+        >>> thread = api.delete_service_logs_with_http_info(org, repo, build, service, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
-        :param int service: Name of the service (required)
+        :param int service: ID of the service (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org', 'build', 'service']  # noqa: E501
+        all_params = ['org', 'repo', 'build', 'service']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -466,14 +466,14 @@ class ServicesApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `delete_service_logs`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `delete_service_logs`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `delete_service_logs`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -486,10 +486,10 @@ class ServicesApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
         if 'service' in params:
@@ -526,18 +526,18 @@ class ServicesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_service(self, repo, org, build, service, **kwargs):  # noqa: E501
+    def get_service(self, org, repo, build, service, **kwargs):  # noqa: E501
         """get_service  # noqa: E501
 
         Get a service for a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_service(repo, org, build, service, async_req=True)
+        >>> thread = api.get_service(org, repo, build, service, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param int service: Name of the service (required)
         :return: Service
@@ -546,23 +546,23 @@ class ServicesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_service_with_http_info(repo, org, build, service, **kwargs)  # noqa: E501
+            return self.get_service_with_http_info(org, repo, build, service, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_service_with_http_info(repo, org, build, service, **kwargs)  # noqa: E501
+            (data) = self.get_service_with_http_info(org, repo, build, service, **kwargs)  # noqa: E501
             return data
 
-    def get_service_with_http_info(self, repo, org, build, service, **kwargs):  # noqa: E501
+    def get_service_with_http_info(self, org, repo, build, service, **kwargs):  # noqa: E501
         """get_service  # noqa: E501
 
         Get a service for a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_service_with_http_info(repo, org, build, service, async_req=True)
+        >>> thread = api.get_service_with_http_info(org, repo, build, service, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param int service: Name of the service (required)
         :return: Service
@@ -570,7 +570,7 @@ class ServicesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org', 'build', 'service']  # noqa: E501
+        all_params = ['org', 'repo', 'build', 'service']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -585,14 +585,14 @@ class ServicesApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `get_service`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `get_service`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `get_service`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -605,10 +605,10 @@ class ServicesApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
         if 'service' in params:
@@ -645,51 +645,51 @@ class ServicesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_service_logs(self, repo, org, build, service, **kwargs):  # noqa: E501
+    def get_service_logs(self, org, repo, build, service, **kwargs):  # noqa: E501
         """get_service_logs  # noqa: E501
 
         Retrieve the logs for a service  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_service_logs(repo, org, build, service, async_req=True)
+        >>> thread = api.get_service_logs(org, repo, build, service, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
-        :param int service: Name of the service (required)
+        :param int service: ID of the service (required)
         :return: Log
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_service_logs_with_http_info(repo, org, build, service, **kwargs)  # noqa: E501
+            return self.get_service_logs_with_http_info(org, repo, build, service, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_service_logs_with_http_info(repo, org, build, service, **kwargs)  # noqa: E501
+            (data) = self.get_service_logs_with_http_info(org, repo, build, service, **kwargs)  # noqa: E501
             return data
 
-    def get_service_logs_with_http_info(self, repo, org, build, service, **kwargs):  # noqa: E501
+    def get_service_logs_with_http_info(self, org, repo, build, service, **kwargs):  # noqa: E501
         """get_service_logs  # noqa: E501
 
         Retrieve the logs for a service  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_service_logs_with_http_info(repo, org, build, service, async_req=True)
+        >>> thread = api.get_service_logs_with_http_info(org, repo, build, service, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
-        :param int service: Name of the service (required)
+        :param int service: ID of the service (required)
         :return: Log
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org', 'build', 'service']  # noqa: E501
+        all_params = ['org', 'repo', 'build', 'service']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -704,14 +704,14 @@ class ServicesApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `get_service_logs`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `get_service_logs`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `get_service_logs`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -724,10 +724,10 @@ class ServicesApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
         if 'service' in params:
@@ -764,18 +764,18 @@ class ServicesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_services(self, repo, org, build, **kwargs):  # noqa: E501
+    def get_services(self, org, repo, build, **kwargs):  # noqa: E501
         """get_services  # noqa: E501
 
         Get a list of all services for a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_services(repo, org, build, async_req=True)
+        >>> thread = api.get_services(org, repo, build, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :return: list[Service]
                  If the method is called asynchronously,
@@ -783,30 +783,30 @@ class ServicesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_services_with_http_info(repo, org, build, **kwargs)  # noqa: E501
+            return self.get_services_with_http_info(org, repo, build, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_services_with_http_info(repo, org, build, **kwargs)  # noqa: E501
+            (data) = self.get_services_with_http_info(org, repo, build, **kwargs)  # noqa: E501
             return data
 
-    def get_services_with_http_info(self, repo, org, build, **kwargs):  # noqa: E501
+    def get_services_with_http_info(self, org, repo, build, **kwargs):  # noqa: E501
         """get_services  # noqa: E501
 
         Get a list of all services for a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_services_with_http_info(repo, org, build, async_req=True)
+        >>> thread = api.get_services_with_http_info(org, repo, build, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :return: list[Service]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org', 'build']  # noqa: E501
+        all_params = ['org', 'repo', 'build']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -821,14 +821,14 @@ class ServicesApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `get_services`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `get_services`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `get_services`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -837,10 +837,10 @@ class ServicesApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
 
@@ -875,19 +875,19 @@ class ServicesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_service(self, body, repo, org, build, service, **kwargs):  # noqa: E501
+    def update_service(self, body, org, repo, build, service, **kwargs):  # noqa: E501
         """update_service  # noqa: E501
 
         Update a service for a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_service(body, repo, org, build, service, async_req=True)
+        >>> thread = api.update_service(body, org, repo, build, service, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Service body: Payload containing the service to update (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param int service: Name of the service (required)
         :return: Service
@@ -896,24 +896,24 @@ class ServicesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_service_with_http_info(body, repo, org, build, service, **kwargs)  # noqa: E501
+            return self.update_service_with_http_info(body, org, repo, build, service, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_service_with_http_info(body, repo, org, build, service, **kwargs)  # noqa: E501
+            (data) = self.update_service_with_http_info(body, org, repo, build, service, **kwargs)  # noqa: E501
             return data
 
-    def update_service_with_http_info(self, body, repo, org, build, service, **kwargs):  # noqa: E501
+    def update_service_with_http_info(self, body, org, repo, build, service, **kwargs):  # noqa: E501
         """update_service  # noqa: E501
 
         Update a service for a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_service_with_http_info(body, repo, org, build, service, async_req=True)
+        >>> thread = api.update_service_with_http_info(body, org, repo, build, service, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Service body: Payload containing the service to update (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param int service: Name of the service (required)
         :return: Service
@@ -921,7 +921,7 @@ class ServicesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['body', 'repo', 'org', 'build', 'service']  # noqa: E501
+        all_params = ['body', 'org', 'repo', 'build', 'service']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -940,14 +940,14 @@ class ServicesApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_service`")  # noqa: E501
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `update_service`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `update_service`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `update_service`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -960,10 +960,10 @@ class ServicesApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
         if 'service' in params:
@@ -1006,19 +1006,19 @@ class ServicesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_service_log(self, body, repo, org, build, service, **kwargs):  # noqa: E501
+    def update_service_log(self, body, org, repo, build, service, **kwargs):  # noqa: E501
         """update_service_log  # noqa: E501
 
         Update the logs for a service  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_service_log(body, repo, org, build, service, async_req=True)
+        >>> thread = api.update_service_log(body, org, repo, build, service, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Log body: Payload containing the log to update (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param int service: Name of the service (required)
         :return: Log
@@ -1027,24 +1027,24 @@ class ServicesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_service_log_with_http_info(body, repo, org, build, service, **kwargs)  # noqa: E501
+            return self.update_service_log_with_http_info(body, org, repo, build, service, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_service_log_with_http_info(body, repo, org, build, service, **kwargs)  # noqa: E501
+            (data) = self.update_service_log_with_http_info(body, org, repo, build, service, **kwargs)  # noqa: E501
             return data
 
-    def update_service_log_with_http_info(self, body, repo, org, build, service, **kwargs):  # noqa: E501
+    def update_service_log_with_http_info(self, body, org, repo, build, service, **kwargs):  # noqa: E501
         """update_service_log  # noqa: E501
 
         Update the logs for a service  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_service_log_with_http_info(body, repo, org, build, service, async_req=True)
+        >>> thread = api.update_service_log_with_http_info(body, org, repo, build, service, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Log body: Payload containing the log to update (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param int service: Name of the service (required)
         :return: Log
@@ -1052,7 +1052,7 @@ class ServicesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['body', 'repo', 'org', 'build', 'service']  # noqa: E501
+        all_params = ['body', 'org', 'repo', 'build', 'service']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1071,14 +1071,14 @@ class ServicesApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_service_log`")  # noqa: E501
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `update_service_log`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `update_service_log`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `update_service_log`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -1091,10 +1091,10 @@ class ServicesApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
         if 'service' in params:

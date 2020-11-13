@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**get_hooks**](DeploymentApi.md#get_hooks) | **GET** /api/v1/hooks/{org}/{repo} | 
 
 # **create_deployment**
-> Deployment create_deployment(repo, org)
+> Deployment create_deployment(org, repo)
 
 
 
@@ -34,11 +34,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.DeploymentApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 
 try:
-    api_response = api_instance.create_deployment(repo, org)
+    api_response = api_instance.create_deployment(org, repo)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DeploymentApi->create_deployment: %s\n" % e)
@@ -48,8 +48,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
 
 ### Return type
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_hooks**
-> str delete_hooks(repo, org, hook)
+> str delete_hooks(org, repo, hook)
 
 
 
@@ -89,12 +89,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.DeploymentApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 hook = 'hook_example' # str | Name of the org
 
 try:
-    api_response = api_instance.delete_hooks(repo, org, hook)
+    api_response = api_instance.delete_hooks(org, repo, hook)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DeploymentApi->delete_hooks: %s\n" % e)
@@ -104,8 +104,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **hook** | **str**| Name of the org | 
 
 ### Return type
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_deployment**
-> str get_deployment(repo, org, deployment)
+> str get_deployment(org, repo, deployment)
 
 
 
@@ -146,12 +146,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.DeploymentApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 deployment = 'deployment_example' # str | Name of the org
 
 try:
-    api_response = api_instance.get_deployment(repo, org, deployment)
+    api_response = api_instance.get_deployment(org, repo, deployment)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DeploymentApi->get_deployment: %s\n" % e)
@@ -161,8 +161,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **deployment** | **str**| Name of the org | 
 
 ### Return type
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_deployments**
-> list[Deployment] get_deployments(repo, org)
+> list[Deployment] get_deployments(org, repo)
 
 
 
@@ -203,11 +203,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.DeploymentApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 
 try:
-    api_response = api_instance.get_deployments(repo, org)
+    api_response = api_instance.get_deployments(org, repo)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DeploymentApi->get_deployments: %s\n" % e)
@@ -217,8 +217,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
 
 ### Return type
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_hook**
-> Webhook get_hook(repo, org, hook)
+> Webhook get_hook(org, repo, hook)
 
 
 
@@ -258,12 +258,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.DeploymentApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 hook = 'hook_example' # str | Name of the org
 
 try:
-    api_response = api_instance.get_hook(repo, org, hook)
+    api_response = api_instance.get_hook(org, repo, hook)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DeploymentApi->get_hook: %s\n" % e)
@@ -273,8 +273,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **hook** | **str**| Name of the org | 
 
 ### Return type
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_hooks**
-> list[Webhook] get_hooks(repo, org)
+> list[Webhook] get_hooks(org, repo)
 
 
 
@@ -315,11 +315,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.DeploymentApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 
 try:
-    api_response = api_instance.get_hooks(repo, org)
+    api_response = api_instance.get_hooks(org, repo)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DeploymentApi->get_hooks: %s\n" % e)
@@ -329,8 +329,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
 
 ### Return type
 

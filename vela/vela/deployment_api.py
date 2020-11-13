@@ -34,47 +34,47 @@ class DeploymentApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_deployment(self, repo, org, **kwargs):  # noqa: E501
+    def create_deployment(self, org, repo, **kwargs):  # noqa: E501
         """create_deployment  # noqa: E501
 
         Create a deployment for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_deployment(repo, org, async_req=True)
+        >>> thread = api.create_deployment(org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: Deployment
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_deployment_with_http_info(repo, org, **kwargs)  # noqa: E501
+            return self.create_deployment_with_http_info(org, repo, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_deployment_with_http_info(repo, org, **kwargs)  # noqa: E501
+            (data) = self.create_deployment_with_http_info(org, repo, **kwargs)  # noqa: E501
             return data
 
-    def create_deployment_with_http_info(self, repo, org, **kwargs):  # noqa: E501
+    def create_deployment_with_http_info(self, org, repo, **kwargs):  # noqa: E501
         """create_deployment  # noqa: E501
 
         Create a deployment for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_deployment_with_http_info(repo, org, async_req=True)
+        >>> thread = api.create_deployment_with_http_info(org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: Deployment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org']  # noqa: E501
+        all_params = ['org', 'repo']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -89,22 +89,22 @@ class DeploymentApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `create_deployment`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `create_deployment`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `create_deployment`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
 
         query_params = []
 
@@ -137,18 +137,18 @@ class DeploymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_hooks(self, repo, org, hook, **kwargs):  # noqa: E501
+    def delete_hooks(self, org, repo, hook, **kwargs):  # noqa: E501
         """delete_hooks  # noqa: E501
 
         Delete a webhook for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_hooks(repo, org, hook, async_req=True)
+        >>> thread = api.delete_hooks(org, repo, hook, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param str hook: Name of the org (required)
         :return: str
                  If the method is called asynchronously,
@@ -156,30 +156,30 @@ class DeploymentApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_hooks_with_http_info(repo, org, hook, **kwargs)  # noqa: E501
+            return self.delete_hooks_with_http_info(org, repo, hook, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_hooks_with_http_info(repo, org, hook, **kwargs)  # noqa: E501
+            (data) = self.delete_hooks_with_http_info(org, repo, hook, **kwargs)  # noqa: E501
             return data
 
-    def delete_hooks_with_http_info(self, repo, org, hook, **kwargs):  # noqa: E501
+    def delete_hooks_with_http_info(self, org, repo, hook, **kwargs):  # noqa: E501
         """delete_hooks  # noqa: E501
 
         Delete a webhook for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_hooks_with_http_info(repo, org, hook, async_req=True)
+        >>> thread = api.delete_hooks_with_http_info(org, repo, hook, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param str hook: Name of the org (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org', 'hook']  # noqa: E501
+        all_params = ['org', 'repo', 'hook']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -194,14 +194,14 @@ class DeploymentApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `delete_hooks`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `delete_hooks`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `delete_hooks`")  # noqa: E501
         # verify the required parameter 'hook' is set
         if ('hook' not in params or
                 params['hook'] is None):
@@ -210,10 +210,10 @@ class DeploymentApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'hook' in params:
             path_params['hook'] = params['hook']  # noqa: E501
 
@@ -248,18 +248,18 @@ class DeploymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_deployment(self, repo, org, deployment, **kwargs):  # noqa: E501
+    def get_deployment(self, org, repo, deployment, **kwargs):  # noqa: E501
         """get_deployment  # noqa: E501
 
         Get a deployment from the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_deployment(repo, org, deployment, async_req=True)
+        >>> thread = api.get_deployment(org, repo, deployment, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param str deployment: Name of the org (required)
         :return: str
                  If the method is called asynchronously,
@@ -267,30 +267,30 @@ class DeploymentApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_deployment_with_http_info(repo, org, deployment, **kwargs)  # noqa: E501
+            return self.get_deployment_with_http_info(org, repo, deployment, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_deployment_with_http_info(repo, org, deployment, **kwargs)  # noqa: E501
+            (data) = self.get_deployment_with_http_info(org, repo, deployment, **kwargs)  # noqa: E501
             return data
 
-    def get_deployment_with_http_info(self, repo, org, deployment, **kwargs):  # noqa: E501
+    def get_deployment_with_http_info(self, org, repo, deployment, **kwargs):  # noqa: E501
         """get_deployment  # noqa: E501
 
         Get a deployment from the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_deployment_with_http_info(repo, org, deployment, async_req=True)
+        >>> thread = api.get_deployment_with_http_info(org, repo, deployment, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param str deployment: Name of the org (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org', 'deployment']  # noqa: E501
+        all_params = ['org', 'repo', 'deployment']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -305,14 +305,14 @@ class DeploymentApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `get_deployment`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `get_deployment`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `get_deployment`")  # noqa: E501
         # verify the required parameter 'deployment' is set
         if ('deployment' not in params or
                 params['deployment'] is None):
@@ -321,10 +321,10 @@ class DeploymentApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'deployment' in params:
             path_params['deployment'] = params['deployment']  # noqa: E501
 
@@ -359,47 +359,47 @@ class DeploymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_deployments(self, repo, org, **kwargs):  # noqa: E501
+    def get_deployments(self, org, repo, **kwargs):  # noqa: E501
         """get_deployments  # noqa: E501
 
         Get a list of deployments for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_deployments(repo, org, async_req=True)
+        >>> thread = api.get_deployments(org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: list[Deployment]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_deployments_with_http_info(repo, org, **kwargs)  # noqa: E501
+            return self.get_deployments_with_http_info(org, repo, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_deployments_with_http_info(repo, org, **kwargs)  # noqa: E501
+            (data) = self.get_deployments_with_http_info(org, repo, **kwargs)  # noqa: E501
             return data
 
-    def get_deployments_with_http_info(self, repo, org, **kwargs):  # noqa: E501
+    def get_deployments_with_http_info(self, org, repo, **kwargs):  # noqa: E501
         """get_deployments  # noqa: E501
 
         Get a list of deployments for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_deployments_with_http_info(repo, org, async_req=True)
+        >>> thread = api.get_deployments_with_http_info(org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: list[Deployment]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org']  # noqa: E501
+        all_params = ['org', 'repo']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -414,22 +414,22 @@ class DeploymentApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `get_deployments`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `get_deployments`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `get_deployments`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
 
         query_params = []
 
@@ -462,18 +462,18 @@ class DeploymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_hook(self, repo, org, hook, **kwargs):  # noqa: E501
+    def get_hook(self, org, repo, hook, **kwargs):  # noqa: E501
         """get_hook  # noqa: E501
 
         Create a webhook for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_hook(repo, org, hook, async_req=True)
+        >>> thread = api.get_hook(org, repo, hook, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param str hook: Name of the org (required)
         :return: Webhook
                  If the method is called asynchronously,
@@ -481,30 +481,30 @@ class DeploymentApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_hook_with_http_info(repo, org, hook, **kwargs)  # noqa: E501
+            return self.get_hook_with_http_info(org, repo, hook, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_hook_with_http_info(repo, org, hook, **kwargs)  # noqa: E501
+            (data) = self.get_hook_with_http_info(org, repo, hook, **kwargs)  # noqa: E501
             return data
 
-    def get_hook_with_http_info(self, repo, org, hook, **kwargs):  # noqa: E501
+    def get_hook_with_http_info(self, org, repo, hook, **kwargs):  # noqa: E501
         """get_hook  # noqa: E501
 
         Create a webhook for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_hook_with_http_info(repo, org, hook, async_req=True)
+        >>> thread = api.get_hook_with_http_info(org, repo, hook, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param str hook: Name of the org (required)
         :return: Webhook
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org', 'hook']  # noqa: E501
+        all_params = ['org', 'repo', 'hook']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -519,14 +519,14 @@ class DeploymentApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `get_hook`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `get_hook`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `get_hook`")  # noqa: E501
         # verify the required parameter 'hook' is set
         if ('hook' not in params or
                 params['hook'] is None):
@@ -535,10 +535,10 @@ class DeploymentApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'hook' in params:
             path_params['hook'] = params['hook']  # noqa: E501
 
@@ -573,47 +573,47 @@ class DeploymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_hooks(self, repo, org, **kwargs):  # noqa: E501
+    def get_hooks(self, org, repo, **kwargs):  # noqa: E501
         """get_hooks  # noqa: E501
 
         Create a webhook for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_hooks(repo, org, async_req=True)
+        >>> thread = api.get_hooks(org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: list[Webhook]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_hooks_with_http_info(repo, org, **kwargs)  # noqa: E501
+            return self.get_hooks_with_http_info(org, repo, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_hooks_with_http_info(repo, org, **kwargs)  # noqa: E501
+            (data) = self.get_hooks_with_http_info(org, repo, **kwargs)  # noqa: E501
             return data
 
-    def get_hooks_with_http_info(self, repo, org, **kwargs):  # noqa: E501
+    def get_hooks_with_http_info(self, org, repo, **kwargs):  # noqa: E501
         """get_hooks  # noqa: E501
 
         Create a webhook for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_hooks_with_http_info(repo, org, async_req=True)
+        >>> thread = api.get_hooks_with_http_info(org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: list[Webhook]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org']  # noqa: E501
+        all_params = ['org', 'repo']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -628,22 +628,22 @@ class DeploymentApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `get_hooks`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `get_hooks`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `get_hooks`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
 
         query_params = []
 
