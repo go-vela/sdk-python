@@ -34,49 +34,49 @@ class WebhookApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_hook(self, body, repo, org, **kwargs):  # noqa: E501
+    def create_hook(self, body, org, repo, **kwargs):  # noqa: E501
         """create_hook  # noqa: E501
 
         Create a webhook for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_hook(body, repo, org, async_req=True)
+        >>> thread = api.create_hook(body, org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Webhook body: Webhook payload that we expect from the user or VCS (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: Webhook
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_hook_with_http_info(body, repo, org, **kwargs)  # noqa: E501
+            return self.create_hook_with_http_info(body, org, repo, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_hook_with_http_info(body, repo, org, **kwargs)  # noqa: E501
+            (data) = self.create_hook_with_http_info(body, org, repo, **kwargs)  # noqa: E501
             return data
 
-    def create_hook_with_http_info(self, body, repo, org, **kwargs):  # noqa: E501
+    def create_hook_with_http_info(self, body, org, repo, **kwargs):  # noqa: E501
         """create_hook  # noqa: E501
 
         Create a webhook for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_hook_with_http_info(body, repo, org, async_req=True)
+        >>> thread = api.create_hook_with_http_info(body, org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Webhook body: Webhook payload that we expect from the user or VCS (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: Webhook
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'repo', 'org']  # noqa: E501
+        all_params = ['body', 'org', 'repo']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -95,22 +95,22 @@ class WebhookApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `create_hook`")  # noqa: E501
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `create_hook`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `create_hook`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `create_hook`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
 
         query_params = []
 
@@ -149,19 +149,19 @@ class WebhookApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_hook(self, body, repo, org, hook, **kwargs):  # noqa: E501
+    def update_hook(self, body, org, repo, hook, **kwargs):  # noqa: E501
         """update_hook  # noqa: E501
 
         Update a webhook for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_hook(body, repo, org, hook, async_req=True)
+        >>> thread = api.update_hook(body, org, repo, hook, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Webhook body: Webhook payload that we expect from the user or VCS (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param str hook: Name of the org (required)
         :return: Webhook
                  If the method is called asynchronously,
@@ -169,31 +169,31 @@ class WebhookApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_hook_with_http_info(body, repo, org, hook, **kwargs)  # noqa: E501
+            return self.update_hook_with_http_info(body, org, repo, hook, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_hook_with_http_info(body, repo, org, hook, **kwargs)  # noqa: E501
+            (data) = self.update_hook_with_http_info(body, org, repo, hook, **kwargs)  # noqa: E501
             return data
 
-    def update_hook_with_http_info(self, body, repo, org, hook, **kwargs):  # noqa: E501
+    def update_hook_with_http_info(self, body, org, repo, hook, **kwargs):  # noqa: E501
         """update_hook  # noqa: E501
 
         Update a webhook for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_hook_with_http_info(body, repo, org, hook, async_req=True)
+        >>> thread = api.update_hook_with_http_info(body, org, repo, hook, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Webhook body: Webhook payload that we expect from the user or VCS (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param str hook: Name of the org (required)
         :return: Webhook
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'repo', 'org', 'hook']  # noqa: E501
+        all_params = ['body', 'org', 'repo', 'hook']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -212,14 +212,14 @@ class WebhookApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_hook`")  # noqa: E501
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `update_hook`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `update_hook`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `update_hook`")  # noqa: E501
         # verify the required parameter 'hook' is set
         if ('hook' not in params or
                 params['hook'] is None):
@@ -228,10 +228,10 @@ class WebhookApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'hook' in params:
             path_params['hook'] = params['hook']  # noqa: E501
 

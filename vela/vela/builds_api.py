@@ -34,49 +34,49 @@ class BuildsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_build(self, body, repo, org, **kwargs):  # noqa: E501
+    def create_build(self, body, org, repo, **kwargs):  # noqa: E501
         """create_build  # noqa: E501
 
         Create a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_build(body, repo, org, async_req=True)
+        >>> thread = api.create_build(body, org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Build body: Payload containing the build to update (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: Build
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_build_with_http_info(body, repo, org, **kwargs)  # noqa: E501
+            return self.create_build_with_http_info(body, org, repo, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_build_with_http_info(body, repo, org, **kwargs)  # noqa: E501
+            (data) = self.create_build_with_http_info(body, org, repo, **kwargs)  # noqa: E501
             return data
 
-    def create_build_with_http_info(self, body, repo, org, **kwargs):  # noqa: E501
+    def create_build_with_http_info(self, body, org, repo, **kwargs):  # noqa: E501
         """create_build  # noqa: E501
 
         Create a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_build_with_http_info(body, repo, org, async_req=True)
+        >>> thread = api.create_build_with_http_info(body, org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Build body: Payload containing the build to update (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: Build
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'repo', 'org']  # noqa: E501
+        all_params = ['body', 'org', 'repo']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -95,22 +95,22 @@ class BuildsApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `create_build`")  # noqa: E501
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `create_build`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `create_build`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `create_build`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
 
         query_params = []
 
@@ -149,18 +149,18 @@ class BuildsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_build(self, repo, org, build, **kwargs):  # noqa: E501
+    def delete_build(self, org, repo, build, **kwargs):  # noqa: E501
         """delete_build  # noqa: E501
 
         Delete a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_build(repo, org, build, async_req=True)
+        >>> thread = api.delete_build(org, repo, build, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number to restart (required)
         :return: str
                  If the method is called asynchronously,
@@ -168,30 +168,30 @@ class BuildsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_build_with_http_info(repo, org, build, **kwargs)  # noqa: E501
+            return self.delete_build_with_http_info(org, repo, build, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_build_with_http_info(repo, org, build, **kwargs)  # noqa: E501
+            (data) = self.delete_build_with_http_info(org, repo, build, **kwargs)  # noqa: E501
             return data
 
-    def delete_build_with_http_info(self, repo, org, build, **kwargs):  # noqa: E501
+    def delete_build_with_http_info(self, org, repo, build, **kwargs):  # noqa: E501
         """delete_build  # noqa: E501
 
         Delete a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_build_with_http_info(repo, org, build, async_req=True)
+        >>> thread = api.delete_build_with_http_info(org, repo, build, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number to restart (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org', 'build']  # noqa: E501
+        all_params = ['org', 'repo', 'build']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -206,14 +206,14 @@ class BuildsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `delete_build`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `delete_build`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `delete_build`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -222,10 +222,10 @@ class BuildsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
 
@@ -260,18 +260,18 @@ class BuildsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_build(self, repo, org, build, **kwargs):  # noqa: E501
+    def get_build(self, org, repo, build, **kwargs):  # noqa: E501
         """get_build  # noqa: E501
 
         Get a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_build(repo, org, build, async_req=True)
+        >>> thread = api.get_build(org, repo, build, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number to restart (required)
         :return: Build
                  If the method is called asynchronously,
@@ -279,30 +279,30 @@ class BuildsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_build_with_http_info(repo, org, build, **kwargs)  # noqa: E501
+            return self.get_build_with_http_info(org, repo, build, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_build_with_http_info(repo, org, build, **kwargs)  # noqa: E501
+            (data) = self.get_build_with_http_info(org, repo, build, **kwargs)  # noqa: E501
             return data
 
-    def get_build_with_http_info(self, repo, org, build, **kwargs):  # noqa: E501
+    def get_build_with_http_info(self, org, repo, build, **kwargs):  # noqa: E501
         """get_build  # noqa: E501
 
         Get a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_build_with_http_info(repo, org, build, async_req=True)
+        >>> thread = api.get_build_with_http_info(org, repo, build, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number to restart (required)
         :return: Build
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org', 'build']  # noqa: E501
+        all_params = ['org', 'repo', 'build']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -317,14 +317,14 @@ class BuildsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `get_build`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `get_build`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `get_build`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -333,10 +333,10 @@ class BuildsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
 
@@ -371,49 +371,49 @@ class BuildsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_build_logs(self, repo, org, build, **kwargs):  # noqa: E501
+    def get_build_logs(self, org, repo, build, **kwargs):  # noqa: E501
         """get_build_logs  # noqa: E501
 
         Get logs for a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_build_logs(repo, org, build, async_req=True)
+        >>> thread = api.get_build_logs(org, repo, build, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number to restart (required)
-        :return: Log
+        :return: list[Log]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_build_logs_with_http_info(repo, org, build, **kwargs)  # noqa: E501
+            return self.get_build_logs_with_http_info(org, repo, build, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_build_logs_with_http_info(repo, org, build, **kwargs)  # noqa: E501
+            (data) = self.get_build_logs_with_http_info(org, repo, build, **kwargs)  # noqa: E501
             return data
 
-    def get_build_logs_with_http_info(self, repo, org, build, **kwargs):  # noqa: E501
+    def get_build_logs_with_http_info(self, org, repo, build, **kwargs):  # noqa: E501
         """get_build_logs  # noqa: E501
 
         Get logs for a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_build_logs_with_http_info(repo, org, build, async_req=True)
+        >>> thread = api.get_build_logs_with_http_info(org, repo, build, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number to restart (required)
-        :return: Log
+        :return: list[Log]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org', 'build']  # noqa: E501
+        all_params = ['org', 'repo', 'build']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -428,14 +428,14 @@ class BuildsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `get_build_logs`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `get_build_logs`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `get_build_logs`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -444,10 +444,10 @@ class BuildsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
 
@@ -474,7 +474,7 @@ class BuildsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Log',  # noqa: E501
+            response_type='list[Log]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -482,47 +482,47 @@ class BuildsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_builds(self, repo, org, **kwargs):  # noqa: E501
+    def get_builds(self, org, repo, **kwargs):  # noqa: E501
         """get_builds  # noqa: E501
 
         Create a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_builds(repo, org, async_req=True)
+        >>> thread = api.get_builds(org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: list[Build]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_builds_with_http_info(repo, org, **kwargs)  # noqa: E501
+            return self.get_builds_with_http_info(org, repo, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_builds_with_http_info(repo, org, **kwargs)  # noqa: E501
+            (data) = self.get_builds_with_http_info(org, repo, **kwargs)  # noqa: E501
             return data
 
-    def get_builds_with_http_info(self, repo, org, **kwargs):  # noqa: E501
+    def get_builds_with_http_info(self, org, repo, **kwargs):  # noqa: E501
         """get_builds  # noqa: E501
 
         Create a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_builds_with_http_info(repo, org, async_req=True)
+        >>> thread = api.get_builds_with_http_info(org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: list[Build]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org']  # noqa: E501
+        all_params = ['org', 'repo']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -537,22 +537,22 @@ class BuildsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `get_builds`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `get_builds`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `get_builds`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
 
         query_params = []
 
@@ -688,18 +688,18 @@ class BuildsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def restart_build(self, repo, org, build, **kwargs):  # noqa: E501
+    def restart_build(self, org, repo, build, **kwargs):  # noqa: E501
         """restart_build  # noqa: E501
 
         Restart a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.restart_build(repo, org, build, async_req=True)
+        >>> thread = api.restart_build(org, repo, build, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number to restart (required)
         :return: Build
                  If the method is called asynchronously,
@@ -707,30 +707,30 @@ class BuildsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.restart_build_with_http_info(repo, org, build, **kwargs)  # noqa: E501
+            return self.restart_build_with_http_info(org, repo, build, **kwargs)  # noqa: E501
         else:
-            (data) = self.restart_build_with_http_info(repo, org, build, **kwargs)  # noqa: E501
+            (data) = self.restart_build_with_http_info(org, repo, build, **kwargs)  # noqa: E501
             return data
 
-    def restart_build_with_http_info(self, repo, org, build, **kwargs):  # noqa: E501
+    def restart_build_with_http_info(self, org, repo, build, **kwargs):  # noqa: E501
         """restart_build  # noqa: E501
 
         Restart a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.restart_build_with_http_info(repo, org, build, async_req=True)
+        >>> thread = api.restart_build_with_http_info(org, repo, build, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number to restart (required)
         :return: Build
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org', 'build']  # noqa: E501
+        all_params = ['org', 'repo', 'build']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -745,14 +745,14 @@ class BuildsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `restart_build`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `restart_build`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `restart_build`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -761,10 +761,10 @@ class BuildsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
 
@@ -799,19 +799,19 @@ class BuildsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_build(self, body, repo, org, build, **kwargs):  # noqa: E501
+    def update_build(self, body, org, repo, build, **kwargs):  # noqa: E501
         """update_build  # noqa: E501
 
         Updates a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_build(body, repo, org, build, async_req=True)
+        >>> thread = api.update_build(body, org, repo, build, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Build body: Payload containing the build to update (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number to restart (required)
         :return: Build
                  If the method is called asynchronously,
@@ -819,31 +819,31 @@ class BuildsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_build_with_http_info(body, repo, org, build, **kwargs)  # noqa: E501
+            return self.update_build_with_http_info(body, org, repo, build, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_build_with_http_info(body, repo, org, build, **kwargs)  # noqa: E501
+            (data) = self.update_build_with_http_info(body, org, repo, build, **kwargs)  # noqa: E501
             return data
 
-    def update_build_with_http_info(self, body, repo, org, build, **kwargs):  # noqa: E501
+    def update_build_with_http_info(self, body, org, repo, build, **kwargs):  # noqa: E501
         """update_build  # noqa: E501
 
         Updates a build in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_build_with_http_info(body, repo, org, build, async_req=True)
+        >>> thread = api.update_build_with_http_info(body, org, repo, build, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Build body: Payload containing the build to update (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number to restart (required)
         :return: Build
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'repo', 'org', 'build']  # noqa: E501
+        all_params = ['body', 'org', 'repo', 'build']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -862,14 +862,14 @@ class BuildsApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_build`")  # noqa: E501
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `update_build`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `update_build`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `update_build`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -878,10 +878,10 @@ class BuildsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
 

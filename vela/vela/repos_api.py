@@ -34,47 +34,47 @@ class ReposApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def chown_repo(self, repo, org, **kwargs):  # noqa: E501
+    def chown_repo(self, org, repo, **kwargs):  # noqa: E501
         """chown_repo  # noqa: E501
 
         Change the owner of the webhook for a repo  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.chown_repo(repo, org, async_req=True)
+        >>> thread = api.chown_repo(org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.chown_repo_with_http_info(repo, org, **kwargs)  # noqa: E501
+            return self.chown_repo_with_http_info(org, repo, **kwargs)  # noqa: E501
         else:
-            (data) = self.chown_repo_with_http_info(repo, org, **kwargs)  # noqa: E501
+            (data) = self.chown_repo_with_http_info(org, repo, **kwargs)  # noqa: E501
             return data
 
-    def chown_repo_with_http_info(self, repo, org, **kwargs):  # noqa: E501
+    def chown_repo_with_http_info(self, org, repo, **kwargs):  # noqa: E501
         """chown_repo  # noqa: E501
 
         Change the owner of the webhook for a repo  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.chown_repo_with_http_info(repo, org, async_req=True)
+        >>> thread = api.chown_repo_with_http_info(org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org']  # noqa: E501
+        all_params = ['org', 'repo']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -89,22 +89,22 @@ class ReposApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `chown_repo`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `chown_repo`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `chown_repo`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
 
         query_params = []
 
@@ -236,47 +236,47 @@ class ReposApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_repo(self, repo, org, **kwargs):  # noqa: E501
+    def delete_repo(self, org, repo, **kwargs):  # noqa: E501
         """delete_repo  # noqa: E501
 
         Delete a repo in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_repo(repo, org, async_req=True)
+        >>> thread = api.delete_repo(org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_repo_with_http_info(repo, org, **kwargs)  # noqa: E501
+            return self.delete_repo_with_http_info(org, repo, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_repo_with_http_info(repo, org, **kwargs)  # noqa: E501
+            (data) = self.delete_repo_with_http_info(org, repo, **kwargs)  # noqa: E501
             return data
 
-    def delete_repo_with_http_info(self, repo, org, **kwargs):  # noqa: E501
+    def delete_repo_with_http_info(self, org, repo, **kwargs):  # noqa: E501
         """delete_repo  # noqa: E501
 
         Delete a repo in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_repo_with_http_info(repo, org, async_req=True)
+        >>> thread = api.delete_repo_with_http_info(org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org']  # noqa: E501
+        all_params = ['org', 'repo']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -291,22 +291,22 @@ class ReposApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `delete_repo`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `delete_repo`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `delete_repo`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
 
         query_params = []
 
@@ -339,47 +339,47 @@ class ReposApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_repo(self, repo, org, **kwargs):  # noqa: E501
+    def get_repo(self, org, repo, **kwargs):  # noqa: E501
         """get_repo  # noqa: E501
 
         Get a repo in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_repo(repo, org, async_req=True)
+        >>> thread = api.get_repo(org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: Repo
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_repo_with_http_info(repo, org, **kwargs)  # noqa: E501
+            return self.get_repo_with_http_info(org, repo, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_repo_with_http_info(repo, org, **kwargs)  # noqa: E501
+            (data) = self.get_repo_with_http_info(org, repo, **kwargs)  # noqa: E501
             return data
 
-    def get_repo_with_http_info(self, repo, org, **kwargs):  # noqa: E501
+    def get_repo_with_http_info(self, org, repo, **kwargs):  # noqa: E501
         """get_repo  # noqa: E501
 
         Get a repo in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_repo_with_http_info(repo, org, async_req=True)
+        >>> thread = api.get_repo_with_http_info(org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: Repo
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org']  # noqa: E501
+        all_params = ['org', 'repo']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -394,22 +394,22 @@ class ReposApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `get_repo`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `get_repo`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `get_repo`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
 
         query_params = []
 
@@ -529,47 +529,47 @@ class ReposApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def repair_repo(self, repo, org, **kwargs):  # noqa: E501
+    def repair_repo(self, org, repo, **kwargs):  # noqa: E501
         """repair_repo  # noqa: E501
 
         Remove and recreate the webhook for a repo  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.repair_repo(repo, org, async_req=True)
+        >>> thread = api.repair_repo(org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.repair_repo_with_http_info(repo, org, **kwargs)  # noqa: E501
+            return self.repair_repo_with_http_info(org, repo, **kwargs)  # noqa: E501
         else:
-            (data) = self.repair_repo_with_http_info(repo, org, **kwargs)  # noqa: E501
+            (data) = self.repair_repo_with_http_info(org, repo, **kwargs)  # noqa: E501
             return data
 
-    def repair_repo_with_http_info(self, repo, org, **kwargs):  # noqa: E501
+    def repair_repo_with_http_info(self, org, repo, **kwargs):  # noqa: E501
         """repair_repo  # noqa: E501
 
         Remove and recreate the webhook for a repo  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.repair_repo_with_http_info(repo, org, async_req=True)
+        >>> thread = api.repair_repo_with_http_info(org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org']  # noqa: E501
+        all_params = ['org', 'repo']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -584,22 +584,22 @@ class ReposApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `repair_repo`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `repair_repo`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `repair_repo`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
 
         query_params = []
 
@@ -632,49 +632,49 @@ class ReposApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_repo(self, body, repo, org, **kwargs):  # noqa: E501
+    def update_repo(self, body, org, repo, **kwargs):  # noqa: E501
         """update_repo  # noqa: E501
 
         Update a repo in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_repo(body, repo, org, async_req=True)
+        >>> thread = api.update_repo(body, org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Repo body: Payload containing the repo to update (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: Repo
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_repo_with_http_info(body, repo, org, **kwargs)  # noqa: E501
+            return self.update_repo_with_http_info(body, org, repo, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_repo_with_http_info(body, repo, org, **kwargs)  # noqa: E501
+            (data) = self.update_repo_with_http_info(body, org, repo, **kwargs)  # noqa: E501
             return data
 
-    def update_repo_with_http_info(self, body, repo, org, **kwargs):  # noqa: E501
+    def update_repo_with_http_info(self, body, org, repo, **kwargs):  # noqa: E501
         """update_repo  # noqa: E501
 
         Update a repo in the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_repo_with_http_info(body, repo, org, async_req=True)
+        >>> thread = api.update_repo_with_http_info(body, org, repo, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Repo body: Payload containing the repo to update (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :return: Repo
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'repo', 'org']  # noqa: E501
+        all_params = ['body', 'org', 'repo']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -693,22 +693,22 @@ class ReposApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_repo`")  # noqa: E501
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `update_repo`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `update_repo`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `update_repo`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
 
         query_params = []
 

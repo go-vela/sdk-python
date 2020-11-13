@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**update_service_log**](ServicesApi.md#update_service_log) | **PUT** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service}/logs | 
 
 # **create_service**
-> Service create_service(body, repo, org, build)
+> Service create_service(body, org, repo, build)
 
 
 
@@ -38,12 +38,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = vela.ServicesApi(vela.ApiClient(configuration))
 body = vela.Service() # Service | Payload containing the service to create
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number
 
 try:
-    api_response = api_instance.create_service(body, repo, org, build)
+    api_response = api_instance.create_service(body, org, repo, build)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServicesApi->create_service: %s\n" % e)
@@ -54,8 +54,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Service**](Service.md)| Payload containing the service to create | 
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number | 
 
 ### Return type
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_service_logs**
-> Log create_service_logs(body, repo, org, build, service)
+> Log create_service_logs(body, org, repo, build, service)
 
 
 
@@ -97,13 +97,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = vela.ServicesApi(vela.ApiClient(configuration))
 body = vela.Log() # Log | Payload containing the log to create
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number
-service = 56 # int | Name of the service
+service = 56 # int | ID of the service
 
 try:
-    api_response = api_instance.create_service_logs(body, repo, org, build, service)
+    api_response = api_instance.create_service_logs(body, org, repo, build, service)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServicesApi->create_service_logs: %s\n" % e)
@@ -114,10 +114,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Log**](Log.md)| Payload containing the log to create | 
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number | 
- **service** | **int**| Name of the service | 
+ **service** | **int**| ID of the service | 
 
 ### Return type
 
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_service**
-> str delete_service(repo, org, build, service)
+> str delete_service(org, repo, build, service)
 
 
 
@@ -157,13 +157,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.ServicesApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number
 service = 56 # int | Name of the service
 
 try:
-    api_response = api_instance.delete_service(repo, org, build, service)
+    api_response = api_instance.delete_service(org, repo, build, service)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServicesApi->delete_service: %s\n" % e)
@@ -173,8 +173,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number | 
  **service** | **int**| Name of the service | 
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_service_logs**
-> str delete_service_logs(repo, org, build, service)
+> str delete_service_logs(org, repo, build, service)
 
 
 
@@ -216,13 +216,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.ServicesApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number
-service = 56 # int | Name of the service
+service = 56 # int | ID of the service
 
 try:
-    api_response = api_instance.delete_service_logs(repo, org, build, service)
+    api_response = api_instance.delete_service_logs(org, repo, build, service)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServicesApi->delete_service_logs: %s\n" % e)
@@ -232,10 +232,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number | 
- **service** | **int**| Name of the service | 
+ **service** | **int**| ID of the service | 
 
 ### Return type
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_service**
-> Service get_service(repo, org, build, service)
+> Service get_service(org, repo, build, service)
 
 
 
@@ -275,13 +275,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.ServicesApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number
 service = 56 # int | Name of the service
 
 try:
-    api_response = api_instance.get_service(repo, org, build, service)
+    api_response = api_instance.get_service(org, repo, build, service)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServicesApi->get_service: %s\n" % e)
@@ -291,8 +291,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number | 
  **service** | **int**| Name of the service | 
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_service_logs**
-> Log get_service_logs(repo, org, build, service)
+> Log get_service_logs(org, repo, build, service)
 
 
 
@@ -334,13 +334,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.ServicesApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number
-service = 56 # int | Name of the service
+service = 56 # int | ID of the service
 
 try:
-    api_response = api_instance.get_service_logs(repo, org, build, service)
+    api_response = api_instance.get_service_logs(org, repo, build, service)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServicesApi->get_service_logs: %s\n" % e)
@@ -350,10 +350,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number | 
- **service** | **int**| Name of the service | 
+ **service** | **int**| ID of the service | 
 
 ### Return type
 
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_services**
-> list[Service] get_services(repo, org, build)
+> list[Service] get_services(org, repo, build)
 
 
 
@@ -393,12 +393,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.ServicesApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number
 
 try:
-    api_response = api_instance.get_services(repo, org, build)
+    api_response = api_instance.get_services(org, repo, build)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServicesApi->get_services: %s\n" % e)
@@ -408,8 +408,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number | 
 
 ### Return type
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_service**
-> Service update_service(body, repo, org, build, service)
+> Service update_service(body, org, repo, build, service)
 
 
 
@@ -451,13 +451,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = vela.ServicesApi(vela.ApiClient(configuration))
 body = vela.Service() # Service | Payload containing the service to update
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number
 service = 56 # int | Name of the service
 
 try:
-    api_response = api_instance.update_service(body, repo, org, build, service)
+    api_response = api_instance.update_service(body, org, repo, build, service)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServicesApi->update_service: %s\n" % e)
@@ -468,8 +468,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Service**](Service.md)| Payload containing the service to update | 
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number | 
  **service** | **int**| Name of the service | 
 
@@ -489,7 +489,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_service_log**
-> Log update_service_log(body, repo, org, build, service)
+> Log update_service_log(body, org, repo, build, service)
 
 
 
@@ -512,13 +512,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = vela.ServicesApi(vela.ApiClient(configuration))
 body = vela.Log() # Log | Payload containing the log to update
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number
 service = 56 # int | Name of the service
 
 try:
-    api_response = api_instance.update_service_log(body, repo, org, build, service)
+    api_response = api_instance.update_service_log(body, org, repo, build, service)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ServicesApi->update_service_log: %s\n" % e)
@@ -529,8 +529,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Log**](Log.md)| Payload containing the log to update | 
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number | 
  **service** | **int**| Name of the service | 
 

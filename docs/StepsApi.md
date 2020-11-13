@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**update_step_log**](StepsApi.md#update_step_log) | **PUT** /api/v1/repos/{org}/{repo}/builds/{build}/steps/{step}/logs | 
 
 # **create_step**
-> Step create_step(body, repo, org, build)
+> Step create_step(body, org, repo, build)
 
 
 
@@ -38,12 +38,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = vela.StepsApi(vela.ApiClient(configuration))
 body = vela.Step() # Step | Payload containing the step to create
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number
 
 try:
-    api_response = api_instance.create_step(body, repo, org, build)
+    api_response = api_instance.create_step(body, org, repo, build)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StepsApi->create_step: %s\n" % e)
@@ -54,8 +54,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Step**](Step.md)| Payload containing the step to create | 
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number | 
 
 ### Return type
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_step_log**
-> Log create_step_log(body, repo, org, build, step)
+> Log create_step_log(body, org, repo, build, step)
 
 
 
@@ -97,13 +97,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = vela.StepsApi(vela.ApiClient(configuration))
 body = vela.Log() # Log | Payload containing the log to create
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number
 step = 'step_example' # str | Build number
 
 try:
-    api_response = api_instance.create_step_log(body, repo, org, build, step)
+    api_response = api_instance.create_step_log(body, org, repo, build, step)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StepsApi->create_step_log: %s\n" % e)
@@ -114,8 +114,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Log**](Log.md)| Payload containing the log to create | 
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number | 
  **step** | **str**| Build number | 
 
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_step**
-> str delete_step(repo, org, build, step)
+> str delete_step(org, repo, build, step)
 
 
 
@@ -157,13 +157,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.StepsApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number
 step = 'step_example' # str | Build number
 
 try:
-    api_response = api_instance.delete_step(repo, org, build, step)
+    api_response = api_instance.delete_step(org, repo, build, step)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StepsApi->delete_step: %s\n" % e)
@@ -173,8 +173,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number | 
  **step** | **str**| Build number | 
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_step_log**
-> str delete_step_log(repo, org, build, step)
+> str delete_step_log(org, repo, build, step)
 
 
 
@@ -216,13 +216,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.StepsApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number
 step = 'step_example' # str | Build number
 
 try:
-    api_response = api_instance.delete_step_log(repo, org, build, step)
+    api_response = api_instance.delete_step_log(org, repo, build, step)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StepsApi->delete_step_log: %s\n" % e)
@@ -232,8 +232,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number | 
  **step** | **str**| Build number | 
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_step**
-> Step get_step(repo, org, build, step)
+> Step get_step(org, repo, build, step)
 
 
 
@@ -275,13 +275,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.StepsApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number
 step = 'step_example' # str | Build number
 
 try:
-    api_response = api_instance.get_step(repo, org, build, step)
+    api_response = api_instance.get_step(org, repo, build, step)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StepsApi->get_step: %s\n" % e)
@@ -291,8 +291,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number | 
  **step** | **str**| Build number | 
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_step_log**
-> Log get_step_log(repo, org, build, step)
+> Log get_step_log(org, repo, build, step)
 
 
 
@@ -334,13 +334,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.StepsApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number
 step = 'step_example' # str | Build number
 
 try:
-    api_response = api_instance.get_step_log(repo, org, build, step)
+    api_response = api_instance.get_step_log(org, repo, build, step)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StepsApi->get_step_log: %s\n" % e)
@@ -350,8 +350,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number | 
  **step** | **str**| Build number | 
 
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_steps**
-> list[Step] get_steps(repo, org, build)
+> list[Step] get_steps(org, repo, build)
 
 
 
@@ -393,12 +393,12 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.StepsApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number
 
 try:
-    api_response = api_instance.get_steps(repo, org, build)
+    api_response = api_instance.get_steps(org, repo, build)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StepsApi->get_steps: %s\n" % e)
@@ -408,8 +408,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number | 
 
 ### Return type
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_step**
-> Step update_step(body, repo, org, build, step)
+> Step update_step(body, org, repo, build, step)
 
 
 
@@ -451,13 +451,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = vela.StepsApi(vela.ApiClient(configuration))
 body = vela.Step() # Step | Payload containing the step to update
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number
 step = 'step_example' # str | Build number
 
 try:
-    api_response = api_instance.update_step(body, repo, org, build, step)
+    api_response = api_instance.update_step(body, org, repo, build, step)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StepsApi->update_step: %s\n" % e)
@@ -468,8 +468,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Step**](Step.md)| Payload containing the step to update | 
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number | 
  **step** | **str**| Build number | 
 
@@ -489,7 +489,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_step_log**
-> Log update_step_log(body, repo, org, build, step)
+> Log update_step_log(body, org, repo, build, step)
 
 
 
@@ -512,13 +512,13 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = vela.StepsApi(vela.ApiClient(configuration))
 body = vela.Log() # Log | Payload containing the log to update
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 build = 56 # int | Build number
 step = 'step_example' # str | Build number
 
 try:
-    api_response = api_instance.update_step_log(body, repo, org, build, step)
+    api_response = api_instance.update_step_log(body, org, repo, build, step)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling StepsApi->update_step_log: %s\n" % e)
@@ -529,8 +529,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Log**](Log.md)| Payload containing the log to update | 
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
  **build** | **int**| Build number | 
  **step** | **str**| Build number | 
 

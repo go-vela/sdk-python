@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**update_worker**](WorkersApi.md#update_worker) | **PUT** /api/v1/workers/{worker} | 
 
 # **create_worker**
-> Worker create_worker(body, authorization)
+> Worker create_worker(body)
 
 
 
@@ -25,13 +25,18 @@ import vela
 from vela.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = vela.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = vela.WorkersApi()
+api_instance = vela.WorkersApi(vela.ApiClient(configuration))
 body = vela.Worker() # Worker | Payload containing the worker to create
-authorization = 'authorization_example' # str | Vela bearer token
 
 try:
-    api_response = api_instance.create_worker(body, authorization)
+    api_response = api_instance.create_worker(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkersApi->create_worker: %s\n" % e)
@@ -42,7 +47,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Worker**](Worker.md)| Payload containing the worker to create | 
- **authorization** | **str**| Vela bearer token | 
 
 ### Return type
 
@@ -50,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -60,7 +64,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_worker**
-> str delete_worker(worker, authorization)
+> str delete_worker(worker)
 
 
 
@@ -74,13 +78,18 @@ import vela
 from vela.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = vela.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = vela.WorkersApi()
+api_instance = vela.WorkersApi(vela.ApiClient(configuration))
 worker = 'worker_example' # str | Name of the worker
-authorization = 'authorization_example' # str | Vela bearer token
 
 try:
-    api_response = api_instance.delete_worker(worker, authorization)
+    api_response = api_instance.delete_worker(worker)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkersApi->delete_worker: %s\n" % e)
@@ -91,7 +100,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **worker** | **str**| Name of the worker | 
- **authorization** | **str**| Vela bearer token | 
 
 ### Return type
 
@@ -99,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -109,7 +117,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_worker**
-> Worker get_worker(worker, authorization)
+> Worker get_worker(worker)
 
 
 
@@ -123,13 +131,18 @@ import vela
 from vela.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = vela.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = vela.WorkersApi()
+api_instance = vela.WorkersApi(vela.ApiClient(configuration))
 worker = 'worker_example' # str | Hostname of the worker
-authorization = 'authorization_example' # str | Vela bearer token
 
 try:
-    api_response = api_instance.get_worker(worker, authorization)
+    api_response = api_instance.get_worker(worker)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkersApi->get_worker: %s\n" % e)
@@ -140,7 +153,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **worker** | **str**| Hostname of the worker | 
- **authorization** | **str**| Vela bearer token | 
 
 ### Return type
 
@@ -148,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -205,7 +217,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_worker**
-> Worker update_worker(body, authorization, worker)
+> Worker update_worker(body, worker)
 
 
 
@@ -219,14 +231,19 @@ import vela
 from vela.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: ApiKeyAuth
+configuration = vela.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = vela.WorkersApi()
+api_instance = vela.WorkersApi(vela.ApiClient(configuration))
 body = vela.Worker() # Worker | Payload containing the worker to update
-authorization = 'authorization_example' # str | Vela bearer token
 worker = 'worker_example' # str | Name of the worker
 
 try:
-    api_response = api_instance.update_worker(body, authorization, worker)
+    api_response = api_instance.update_worker(body, worker)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkersApi->update_worker: %s\n" % e)
@@ -237,7 +254,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Worker**](Worker.md)| Payload containing the worker to update | 
- **authorization** | **str**| Vela bearer token | 
  **worker** | **str**| Name of the worker | 
 
 ### Return type
@@ -246,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

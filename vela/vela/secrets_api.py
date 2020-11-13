@@ -34,20 +34,20 @@ class SecretsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_secret(self, body, engine, org, type, name, **kwargs):  # noqa: E501
+    def create_secret(self, body, engine, type, org, name, **kwargs):  # noqa: E501
         """create_secret  # noqa: E501
 
         Create a secret  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_secret(body, engine, org, type, name, async_req=True)
+        >>> thread = api.create_secret(body, engine, type, org, name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Secret body: Payload containing the secret to create (required)
         :param str engine: Secret engine to create a secret in (required)
-        :param str org: Name of the org (required)
         :param str type: Secret type to create. Options 'org', 'repo', or 'shared' (required)
+        :param str org: Name of the org (required)
         :param str name: Name of the repo if a repo secret, team name if a shared secret, or '*' if an org secret (required)
         :return: Secret
                  If the method is called asynchronously,
@@ -55,32 +55,32 @@ class SecretsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_secret_with_http_info(body, engine, org, type, name, **kwargs)  # noqa: E501
+            return self.create_secret_with_http_info(body, engine, type, org, name, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_secret_with_http_info(body, engine, org, type, name, **kwargs)  # noqa: E501
+            (data) = self.create_secret_with_http_info(body, engine, type, org, name, **kwargs)  # noqa: E501
             return data
 
-    def create_secret_with_http_info(self, body, engine, org, type, name, **kwargs):  # noqa: E501
+    def create_secret_with_http_info(self, body, engine, type, org, name, **kwargs):  # noqa: E501
         """create_secret  # noqa: E501
 
         Create a secret  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_secret_with_http_info(body, engine, org, type, name, async_req=True)
+        >>> thread = api.create_secret_with_http_info(body, engine, type, org, name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Secret body: Payload containing the secret to create (required)
         :param str engine: Secret engine to create a secret in (required)
-        :param str org: Name of the org (required)
         :param str type: Secret type to create. Options 'org', 'repo', or 'shared' (required)
+        :param str org: Name of the org (required)
         :param str name: Name of the repo if a repo secret, team name if a shared secret, or '*' if an org secret (required)
         :return: Secret
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'engine', 'org', 'type', 'name']  # noqa: E501
+        all_params = ['body', 'engine', 'type', 'org', 'name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -103,14 +103,14 @@ class SecretsApi(object):
         if ('engine' not in params or
                 params['engine'] is None):
             raise ValueError("Missing the required parameter `engine` when calling `create_secret`")  # noqa: E501
-        # verify the required parameter 'org' is set
-        if ('org' not in params or
-                params['org'] is None):
-            raise ValueError("Missing the required parameter `org` when calling `create_secret`")  # noqa: E501
         # verify the required parameter 'type' is set
         if ('type' not in params or
                 params['type'] is None):
             raise ValueError("Missing the required parameter `type` when calling `create_secret`")  # noqa: E501
+        # verify the required parameter 'org' is set
+        if ('org' not in params or
+                params['org'] is None):
+            raise ValueError("Missing the required parameter `org` when calling `create_secret`")  # noqa: E501
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
@@ -121,10 +121,10 @@ class SecretsApi(object):
         path_params = {}
         if 'engine' in params:
             path_params['engine'] = params['engine']  # noqa: E501
-        if 'org' in params:
-            path_params['org'] = params['org']  # noqa: E501
         if 'type' in params:
             path_params['type'] = params['type']  # noqa: E501
+        if 'org' in params:
+            path_params['org'] = params['org']  # noqa: E501
         if 'name' in params:
             path_params['name'] = params['name']  # noqa: E501
 
@@ -165,19 +165,19 @@ class SecretsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_secret(self, body, engine, org, type, name, secret, **kwargs):  # noqa: E501
+    def delete_secret(self, body, engine, type, org, name, secret, **kwargs):  # noqa: E501
         """Delete a secret from the configured backend.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_secret(body, engine, org, type, name, secret, async_req=True)
+        >>> thread = api.delete_secret(body, engine, type, org, name, secret, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Secret body: Payload containing secret to update (required)
         :param str engine: Secret engine to create a secret in (required)
-        :param str org: Name of the org (required)
         :param str type: Secret type to create. Options 'org', 'repo', or 'shared' (required)
+        :param str org: Name of the org (required)
         :param str name: Name of the repo if a repo secret, team name if a shared secret, or '*' if an org secret (required)
         :param str secret: Name of the secret (required)
         :return: str
@@ -186,24 +186,24 @@ class SecretsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_secret_with_http_info(body, engine, org, type, name, secret, **kwargs)  # noqa: E501
+            return self.delete_secret_with_http_info(body, engine, type, org, name, secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_secret_with_http_info(body, engine, org, type, name, secret, **kwargs)  # noqa: E501
+            (data) = self.delete_secret_with_http_info(body, engine, type, org, name, secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_secret_with_http_info(self, body, engine, org, type, name, secret, **kwargs):  # noqa: E501
+    def delete_secret_with_http_info(self, body, engine, type, org, name, secret, **kwargs):  # noqa: E501
         """Delete a secret from the configured backend.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_secret_with_http_info(body, engine, org, type, name, secret, async_req=True)
+        >>> thread = api.delete_secret_with_http_info(body, engine, type, org, name, secret, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Secret body: Payload containing secret to update (required)
         :param str engine: Secret engine to create a secret in (required)
-        :param str org: Name of the org (required)
         :param str type: Secret type to create. Options 'org', 'repo', or 'shared' (required)
+        :param str org: Name of the org (required)
         :param str name: Name of the repo if a repo secret, team name if a shared secret, or '*' if an org secret (required)
         :param str secret: Name of the secret (required)
         :return: str
@@ -211,7 +211,7 @@ class SecretsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['body', 'engine', 'org', 'type', 'name', 'secret']  # noqa: E501
+        all_params = ['body', 'engine', 'type', 'org', 'name', 'secret']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -234,14 +234,14 @@ class SecretsApi(object):
         if ('engine' not in params or
                 params['engine'] is None):
             raise ValueError("Missing the required parameter `engine` when calling `delete_secret`")  # noqa: E501
-        # verify the required parameter 'org' is set
-        if ('org' not in params or
-                params['org'] is None):
-            raise ValueError("Missing the required parameter `org` when calling `delete_secret`")  # noqa: E501
         # verify the required parameter 'type' is set
         if ('type' not in params or
                 params['type'] is None):
             raise ValueError("Missing the required parameter `type` when calling `delete_secret`")  # noqa: E501
+        # verify the required parameter 'org' is set
+        if ('org' not in params or
+                params['org'] is None):
+            raise ValueError("Missing the required parameter `org` when calling `delete_secret`")  # noqa: E501
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
@@ -256,10 +256,10 @@ class SecretsApi(object):
         path_params = {}
         if 'engine' in params:
             path_params['engine'] = params['engine']  # noqa: E501
-        if 'org' in params:
-            path_params['org'] = params['org']  # noqa: E501
         if 'type' in params:
             path_params['type'] = params['type']  # noqa: E501
+        if 'org' in params:
+            path_params['org'] = params['org']  # noqa: E501
         if 'name' in params:
             path_params['name'] = params['name']  # noqa: E501
         if 'secret' in params:
@@ -302,18 +302,18 @@ class SecretsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_secret(self, engine, org, type, name, secret, **kwargs):  # noqa: E501
+    def get_secret(self, engine, type, org, name, secret, **kwargs):  # noqa: E501
         """Retrieve a secret from the configured backend.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_secret(engine, org, type, name, secret, async_req=True)
+        >>> thread = api.get_secret(engine, type, org, name, secret, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str engine: Secret engine to create a secret in (required)
-        :param str org: Name of the org (required)
         :param str type: Secret type to create. Options 'org', 'repo', or 'shared' (required)
+        :param str org: Name of the org (required)
         :param str name: Name of the repo if a repo secret, team name if a shared secret, or '*' if an org secret (required)
         :param str secret: Name of the secret (required)
         :return: Secret
@@ -322,23 +322,23 @@ class SecretsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_secret_with_http_info(engine, org, type, name, secret, **kwargs)  # noqa: E501
+            return self.get_secret_with_http_info(engine, type, org, name, secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_secret_with_http_info(engine, org, type, name, secret, **kwargs)  # noqa: E501
+            (data) = self.get_secret_with_http_info(engine, type, org, name, secret, **kwargs)  # noqa: E501
             return data
 
-    def get_secret_with_http_info(self, engine, org, type, name, secret, **kwargs):  # noqa: E501
+    def get_secret_with_http_info(self, engine, type, org, name, secret, **kwargs):  # noqa: E501
         """Retrieve a secret from the configured backend.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_secret_with_http_info(engine, org, type, name, secret, async_req=True)
+        >>> thread = api.get_secret_with_http_info(engine, type, org, name, secret, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str engine: Secret engine to create a secret in (required)
-        :param str org: Name of the org (required)
         :param str type: Secret type to create. Options 'org', 'repo', or 'shared' (required)
+        :param str org: Name of the org (required)
         :param str name: Name of the repo if a repo secret, team name if a shared secret, or '*' if an org secret (required)
         :param str secret: Name of the secret (required)
         :return: Secret
@@ -346,7 +346,7 @@ class SecretsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['engine', 'org', 'type', 'name', 'secret']  # noqa: E501
+        all_params = ['engine', 'type', 'org', 'name', 'secret']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -365,14 +365,14 @@ class SecretsApi(object):
         if ('engine' not in params or
                 params['engine'] is None):
             raise ValueError("Missing the required parameter `engine` when calling `get_secret`")  # noqa: E501
-        # verify the required parameter 'org' is set
-        if ('org' not in params or
-                params['org'] is None):
-            raise ValueError("Missing the required parameter `org` when calling `get_secret`")  # noqa: E501
         # verify the required parameter 'type' is set
         if ('type' not in params or
                 params['type'] is None):
             raise ValueError("Missing the required parameter `type` when calling `get_secret`")  # noqa: E501
+        # verify the required parameter 'org' is set
+        if ('org' not in params or
+                params['org'] is None):
+            raise ValueError("Missing the required parameter `org` when calling `get_secret`")  # noqa: E501
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
@@ -387,10 +387,10 @@ class SecretsApi(object):
         path_params = {}
         if 'engine' in params:
             path_params['engine'] = params['engine']  # noqa: E501
-        if 'org' in params:
-            path_params['org'] = params['org']  # noqa: E501
         if 'type' in params:
             path_params['type'] = params['type']  # noqa: E501
+        if 'org' in params:
+            path_params['org'] = params['org']  # noqa: E501
         if 'name' in params:
             path_params['name'] = params['name']  # noqa: E501
         if 'secret' in params:
@@ -427,18 +427,18 @@ class SecretsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_secrets(self, engine, org, type, name, **kwargs):  # noqa: E501
+    def get_secrets(self, engine, type, org, name, **kwargs):  # noqa: E501
         """Retrieve a list of secrets from the configured backend.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_secrets(engine, org, type, name, async_req=True)
+        >>> thread = api.get_secrets(engine, type, org, name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str engine: Secret engine to create a secret in (required)
-        :param str org: Name of the org (required)
         :param str type: Secret type to create. Options 'org', 'repo', or 'shared' (required)
+        :param str org: Name of the org (required)
         :param str name: Name of the repo if a repo secret, team name if a shared secret, or '*' if an org secret (required)
         :return: list[Secret]
                  If the method is called asynchronously,
@@ -446,30 +446,30 @@ class SecretsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_secrets_with_http_info(engine, org, type, name, **kwargs)  # noqa: E501
+            return self.get_secrets_with_http_info(engine, type, org, name, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_secrets_with_http_info(engine, org, type, name, **kwargs)  # noqa: E501
+            (data) = self.get_secrets_with_http_info(engine, type, org, name, **kwargs)  # noqa: E501
             return data
 
-    def get_secrets_with_http_info(self, engine, org, type, name, **kwargs):  # noqa: E501
+    def get_secrets_with_http_info(self, engine, type, org, name, **kwargs):  # noqa: E501
         """Retrieve a list of secrets from the configured backend.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_secrets_with_http_info(engine, org, type, name, async_req=True)
+        >>> thread = api.get_secrets_with_http_info(engine, type, org, name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str engine: Secret engine to create a secret in (required)
-        :param str org: Name of the org (required)
         :param str type: Secret type to create. Options 'org', 'repo', or 'shared' (required)
+        :param str org: Name of the org (required)
         :param str name: Name of the repo if a repo secret, team name if a shared secret, or '*' if an org secret (required)
         :return: list[Secret]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['engine', 'org', 'type', 'name']  # noqa: E501
+        all_params = ['engine', 'type', 'org', 'name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -488,14 +488,14 @@ class SecretsApi(object):
         if ('engine' not in params or
                 params['engine'] is None):
             raise ValueError("Missing the required parameter `engine` when calling `get_secrets`")  # noqa: E501
-        # verify the required parameter 'org' is set
-        if ('org' not in params or
-                params['org'] is None):
-            raise ValueError("Missing the required parameter `org` when calling `get_secrets`")  # noqa: E501
         # verify the required parameter 'type' is set
         if ('type' not in params or
                 params['type'] is None):
             raise ValueError("Missing the required parameter `type` when calling `get_secrets`")  # noqa: E501
+        # verify the required parameter 'org' is set
+        if ('org' not in params or
+                params['org'] is None):
+            raise ValueError("Missing the required parameter `org` when calling `get_secrets`")  # noqa: E501
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
@@ -506,10 +506,10 @@ class SecretsApi(object):
         path_params = {}
         if 'engine' in params:
             path_params['engine'] = params['engine']  # noqa: E501
-        if 'org' in params:
-            path_params['org'] = params['org']  # noqa: E501
         if 'type' in params:
             path_params['type'] = params['type']  # noqa: E501
+        if 'org' in params:
+            path_params['org'] = params['org']  # noqa: E501
         if 'name' in params:
             path_params['name'] = params['name']  # noqa: E501
 
@@ -544,19 +544,19 @@ class SecretsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_secrets(self, body, engine, org, type, name, secret, **kwargs):  # noqa: E501
+    def update_secrets(self, body, engine, type, org, name, secret, **kwargs):  # noqa: E501
         """Update a secret from the configured backend.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_secrets(body, engine, org, type, name, secret, async_req=True)
+        >>> thread = api.update_secrets(body, engine, type, org, name, secret, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Secret body: Payload containing the secret to create (required)
         :param str engine: Secret engine to create a secret in (required)
-        :param str org: Name of the org (required)
         :param str type: Secret type to create. Options 'org', 'repo', or 'shared' (required)
+        :param str org: Name of the org (required)
         :param str name: Name of the repo if a repo secret, team name if a shared secret, or '*' if an org secret (required)
         :param str secret: Name of the secret (required)
         :return: Secret
@@ -565,24 +565,24 @@ class SecretsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_secrets_with_http_info(body, engine, org, type, name, secret, **kwargs)  # noqa: E501
+            return self.update_secrets_with_http_info(body, engine, type, org, name, secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_secrets_with_http_info(body, engine, org, type, name, secret, **kwargs)  # noqa: E501
+            (data) = self.update_secrets_with_http_info(body, engine, type, org, name, secret, **kwargs)  # noqa: E501
             return data
 
-    def update_secrets_with_http_info(self, body, engine, org, type, name, secret, **kwargs):  # noqa: E501
+    def update_secrets_with_http_info(self, body, engine, type, org, name, secret, **kwargs):  # noqa: E501
         """Update a secret from the configured backend.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_secrets_with_http_info(body, engine, org, type, name, secret, async_req=True)
+        >>> thread = api.update_secrets_with_http_info(body, engine, type, org, name, secret, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Secret body: Payload containing the secret to create (required)
         :param str engine: Secret engine to create a secret in (required)
-        :param str org: Name of the org (required)
         :param str type: Secret type to create. Options 'org', 'repo', or 'shared' (required)
+        :param str org: Name of the org (required)
         :param str name: Name of the repo if a repo secret, team name if a shared secret, or '*' if an org secret (required)
         :param str secret: Name of the secret (required)
         :return: Secret
@@ -590,7 +590,7 @@ class SecretsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['body', 'engine', 'org', 'type', 'name', 'secret']  # noqa: E501
+        all_params = ['body', 'engine', 'type', 'org', 'name', 'secret']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -613,14 +613,14 @@ class SecretsApi(object):
         if ('engine' not in params or
                 params['engine'] is None):
             raise ValueError("Missing the required parameter `engine` when calling `update_secrets`")  # noqa: E501
-        # verify the required parameter 'org' is set
-        if ('org' not in params or
-                params['org'] is None):
-            raise ValueError("Missing the required parameter `org` when calling `update_secrets`")  # noqa: E501
         # verify the required parameter 'type' is set
         if ('type' not in params or
                 params['type'] is None):
             raise ValueError("Missing the required parameter `type` when calling `update_secrets`")  # noqa: E501
+        # verify the required parameter 'org' is set
+        if ('org' not in params or
+                params['org'] is None):
+            raise ValueError("Missing the required parameter `org` when calling `update_secrets`")  # noqa: E501
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
@@ -635,10 +635,10 @@ class SecretsApi(object):
         path_params = {}
         if 'engine' in params:
             path_params['engine'] = params['engine']  # noqa: E501
-        if 'org' in params:
-            path_params['org'] = params['org']  # noqa: E501
         if 'type' in params:
             path_params['type'] = params['type']  # noqa: E501
+        if 'org' in params:
+            path_params['org'] = params['org']  # noqa: E501
         if 'name' in params:
             path_params['name'] = params['name']  # noqa: E501
         if 'secret' in params:

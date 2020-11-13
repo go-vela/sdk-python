@@ -34,19 +34,19 @@ class StepsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_step(self, body, repo, org, build, **kwargs):  # noqa: E501
+    def create_step(self, body, org, repo, build, **kwargs):  # noqa: E501
         """create_step  # noqa: E501
 
         Create a step for a build  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_step(body, repo, org, build, async_req=True)
+        >>> thread = api.create_step(body, org, repo, build, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Step body: Payload containing the step to create (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :return: Step
                  If the method is called asynchronously,
@@ -54,31 +54,31 @@ class StepsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_step_with_http_info(body, repo, org, build, **kwargs)  # noqa: E501
+            return self.create_step_with_http_info(body, org, repo, build, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_step_with_http_info(body, repo, org, build, **kwargs)  # noqa: E501
+            (data) = self.create_step_with_http_info(body, org, repo, build, **kwargs)  # noqa: E501
             return data
 
-    def create_step_with_http_info(self, body, repo, org, build, **kwargs):  # noqa: E501
+    def create_step_with_http_info(self, body, org, repo, build, **kwargs):  # noqa: E501
         """create_step  # noqa: E501
 
         Create a step for a build  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_step_with_http_info(body, repo, org, build, async_req=True)
+        >>> thread = api.create_step_with_http_info(body, org, repo, build, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Step body: Payload containing the step to create (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :return: Step
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'repo', 'org', 'build']  # noqa: E501
+        all_params = ['body', 'org', 'repo', 'build']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -97,14 +97,14 @@ class StepsApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `create_step`")  # noqa: E501
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `create_step`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `create_step`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `create_step`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -113,10 +113,10 @@ class StepsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
 
@@ -157,19 +157,19 @@ class StepsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_step_log(self, body, repo, org, build, step, **kwargs):  # noqa: E501
+    def create_step_log(self, body, org, repo, build, step, **kwargs):  # noqa: E501
         """create_step_log  # noqa: E501
 
         Create the logs for a step  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_step_log(body, repo, org, build, step, async_req=True)
+        >>> thread = api.create_step_log(body, org, repo, build, step, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Log body: Payload containing the log to create (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param str step: Build number (required)
         :return: Log
@@ -178,24 +178,24 @@ class StepsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_step_log_with_http_info(body, repo, org, build, step, **kwargs)  # noqa: E501
+            return self.create_step_log_with_http_info(body, org, repo, build, step, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_step_log_with_http_info(body, repo, org, build, step, **kwargs)  # noqa: E501
+            (data) = self.create_step_log_with_http_info(body, org, repo, build, step, **kwargs)  # noqa: E501
             return data
 
-    def create_step_log_with_http_info(self, body, repo, org, build, step, **kwargs):  # noqa: E501
+    def create_step_log_with_http_info(self, body, org, repo, build, step, **kwargs):  # noqa: E501
         """create_step_log  # noqa: E501
 
         Create the logs for a step  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_step_log_with_http_info(body, repo, org, build, step, async_req=True)
+        >>> thread = api.create_step_log_with_http_info(body, org, repo, build, step, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Log body: Payload containing the log to create (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param str step: Build number (required)
         :return: Log
@@ -203,7 +203,7 @@ class StepsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['body', 'repo', 'org', 'build', 'step']  # noqa: E501
+        all_params = ['body', 'org', 'repo', 'build', 'step']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -222,14 +222,14 @@ class StepsApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `create_step_log`")  # noqa: E501
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `create_step_log`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `create_step_log`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `create_step_log`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -242,10 +242,10 @@ class StepsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
         if 'step' in params:
@@ -288,18 +288,18 @@ class StepsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_step(self, repo, org, build, step, **kwargs):  # noqa: E501
+    def delete_step(self, org, repo, build, step, **kwargs):  # noqa: E501
         """delete_step  # noqa: E501
 
         Delete a step for a build  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_step(repo, org, build, step, async_req=True)
+        >>> thread = api.delete_step(org, repo, build, step, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param str step: Build number (required)
         :return: str
@@ -308,23 +308,23 @@ class StepsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_step_with_http_info(repo, org, build, step, **kwargs)  # noqa: E501
+            return self.delete_step_with_http_info(org, repo, build, step, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_step_with_http_info(repo, org, build, step, **kwargs)  # noqa: E501
+            (data) = self.delete_step_with_http_info(org, repo, build, step, **kwargs)  # noqa: E501
             return data
 
-    def delete_step_with_http_info(self, repo, org, build, step, **kwargs):  # noqa: E501
+    def delete_step_with_http_info(self, org, repo, build, step, **kwargs):  # noqa: E501
         """delete_step  # noqa: E501
 
         Delete a step for a build  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_step_with_http_info(repo, org, build, step, async_req=True)
+        >>> thread = api.delete_step_with_http_info(org, repo, build, step, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param str step: Build number (required)
         :return: str
@@ -332,7 +332,7 @@ class StepsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org', 'build', 'step']  # noqa: E501
+        all_params = ['org', 'repo', 'build', 'step']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -347,14 +347,14 @@ class StepsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `delete_step`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `delete_step`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `delete_step`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -367,10 +367,10 @@ class StepsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
         if 'step' in params:
@@ -407,18 +407,18 @@ class StepsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_step_log(self, repo, org, build, step, **kwargs):  # noqa: E501
+    def delete_step_log(self, org, repo, build, step, **kwargs):  # noqa: E501
         """delete_step_log  # noqa: E501
 
         Delete the logs for a step  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_step_log(repo, org, build, step, async_req=True)
+        >>> thread = api.delete_step_log(org, repo, build, step, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param str step: Build number (required)
         :return: str
@@ -427,23 +427,23 @@ class StepsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_step_log_with_http_info(repo, org, build, step, **kwargs)  # noqa: E501
+            return self.delete_step_log_with_http_info(org, repo, build, step, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_step_log_with_http_info(repo, org, build, step, **kwargs)  # noqa: E501
+            (data) = self.delete_step_log_with_http_info(org, repo, build, step, **kwargs)  # noqa: E501
             return data
 
-    def delete_step_log_with_http_info(self, repo, org, build, step, **kwargs):  # noqa: E501
+    def delete_step_log_with_http_info(self, org, repo, build, step, **kwargs):  # noqa: E501
         """delete_step_log  # noqa: E501
 
         Delete the logs for a step  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_step_log_with_http_info(repo, org, build, step, async_req=True)
+        >>> thread = api.delete_step_log_with_http_info(org, repo, build, step, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param str step: Build number (required)
         :return: str
@@ -451,7 +451,7 @@ class StepsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org', 'build', 'step']  # noqa: E501
+        all_params = ['org', 'repo', 'build', 'step']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -466,14 +466,14 @@ class StepsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `delete_step_log`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `delete_step_log`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `delete_step_log`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -486,10 +486,10 @@ class StepsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
         if 'step' in params:
@@ -526,18 +526,18 @@ class StepsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_step(self, repo, org, build, step, **kwargs):  # noqa: E501
+    def get_step(self, org, repo, build, step, **kwargs):  # noqa: E501
         """get_step  # noqa: E501
 
         Retrieve a step for a build  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_step(repo, org, build, step, async_req=True)
+        >>> thread = api.get_step(org, repo, build, step, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param str step: Build number (required)
         :return: Step
@@ -546,23 +546,23 @@ class StepsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_step_with_http_info(repo, org, build, step, **kwargs)  # noqa: E501
+            return self.get_step_with_http_info(org, repo, build, step, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_step_with_http_info(repo, org, build, step, **kwargs)  # noqa: E501
+            (data) = self.get_step_with_http_info(org, repo, build, step, **kwargs)  # noqa: E501
             return data
 
-    def get_step_with_http_info(self, repo, org, build, step, **kwargs):  # noqa: E501
+    def get_step_with_http_info(self, org, repo, build, step, **kwargs):  # noqa: E501
         """get_step  # noqa: E501
 
         Retrieve a step for a build  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_step_with_http_info(repo, org, build, step, async_req=True)
+        >>> thread = api.get_step_with_http_info(org, repo, build, step, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param str step: Build number (required)
         :return: Step
@@ -570,7 +570,7 @@ class StepsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org', 'build', 'step']  # noqa: E501
+        all_params = ['org', 'repo', 'build', 'step']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -585,14 +585,14 @@ class StepsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `get_step`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `get_step`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `get_step`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -605,10 +605,10 @@ class StepsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
         if 'step' in params:
@@ -645,18 +645,18 @@ class StepsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_step_log(self, repo, org, build, step, **kwargs):  # noqa: E501
+    def get_step_log(self, org, repo, build, step, **kwargs):  # noqa: E501
         """get_step_log  # noqa: E501
 
         Retrieve the logs for a step  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_step_log(repo, org, build, step, async_req=True)
+        >>> thread = api.get_step_log(org, repo, build, step, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param str step: Build number (required)
         :return: Log
@@ -665,23 +665,23 @@ class StepsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_step_log_with_http_info(repo, org, build, step, **kwargs)  # noqa: E501
+            return self.get_step_log_with_http_info(org, repo, build, step, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_step_log_with_http_info(repo, org, build, step, **kwargs)  # noqa: E501
+            (data) = self.get_step_log_with_http_info(org, repo, build, step, **kwargs)  # noqa: E501
             return data
 
-    def get_step_log_with_http_info(self, repo, org, build, step, **kwargs):  # noqa: E501
+    def get_step_log_with_http_info(self, org, repo, build, step, **kwargs):  # noqa: E501
         """get_step_log  # noqa: E501
 
         Retrieve the logs for a step  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_step_log_with_http_info(repo, org, build, step, async_req=True)
+        >>> thread = api.get_step_log_with_http_info(org, repo, build, step, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param str step: Build number (required)
         :return: Log
@@ -689,7 +689,7 @@ class StepsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org', 'build', 'step']  # noqa: E501
+        all_params = ['org', 'repo', 'build', 'step']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -704,14 +704,14 @@ class StepsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `get_step_log`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `get_step_log`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `get_step_log`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -724,10 +724,10 @@ class StepsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
         if 'step' in params:
@@ -764,18 +764,18 @@ class StepsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_steps(self, repo, org, build, **kwargs):  # noqa: E501
+    def get_steps(self, org, repo, build, **kwargs):  # noqa: E501
         """get_steps  # noqa: E501
 
         Retrieve a list of steps for a build  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_steps(repo, org, build, async_req=True)
+        >>> thread = api.get_steps(org, repo, build, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :return: list[Step]
                  If the method is called asynchronously,
@@ -783,30 +783,30 @@ class StepsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_steps_with_http_info(repo, org, build, **kwargs)  # noqa: E501
+            return self.get_steps_with_http_info(org, repo, build, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_steps_with_http_info(repo, org, build, **kwargs)  # noqa: E501
+            (data) = self.get_steps_with_http_info(org, repo, build, **kwargs)  # noqa: E501
             return data
 
-    def get_steps_with_http_info(self, repo, org, build, **kwargs):  # noqa: E501
+    def get_steps_with_http_info(self, org, repo, build, **kwargs):  # noqa: E501
         """get_steps  # noqa: E501
 
         Retrieve a list of steps for a build  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_steps_with_http_info(repo, org, build, async_req=True)
+        >>> thread = api.get_steps_with_http_info(org, repo, build, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :return: list[Step]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['repo', 'org', 'build']  # noqa: E501
+        all_params = ['org', 'repo', 'build']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -821,14 +821,14 @@ class StepsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `get_steps`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `get_steps`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `get_steps`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -837,10 +837,10 @@ class StepsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
 
@@ -875,19 +875,19 @@ class StepsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_step(self, body, repo, org, build, step, **kwargs):  # noqa: E501
+    def update_step(self, body, org, repo, build, step, **kwargs):  # noqa: E501
         """update_step  # noqa: E501
 
         Update a step for a build  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_step(body, repo, org, build, step, async_req=True)
+        >>> thread = api.update_step(body, org, repo, build, step, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Step body: Payload containing the step to update (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param str step: Build number (required)
         :return: Step
@@ -896,24 +896,24 @@ class StepsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_step_with_http_info(body, repo, org, build, step, **kwargs)  # noqa: E501
+            return self.update_step_with_http_info(body, org, repo, build, step, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_step_with_http_info(body, repo, org, build, step, **kwargs)  # noqa: E501
+            (data) = self.update_step_with_http_info(body, org, repo, build, step, **kwargs)  # noqa: E501
             return data
 
-    def update_step_with_http_info(self, body, repo, org, build, step, **kwargs):  # noqa: E501
+    def update_step_with_http_info(self, body, org, repo, build, step, **kwargs):  # noqa: E501
         """update_step  # noqa: E501
 
         Update a step for a build  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_step_with_http_info(body, repo, org, build, step, async_req=True)
+        >>> thread = api.update_step_with_http_info(body, org, repo, build, step, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Step body: Payload containing the step to update (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param str step: Build number (required)
         :return: Step
@@ -921,7 +921,7 @@ class StepsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['body', 'repo', 'org', 'build', 'step']  # noqa: E501
+        all_params = ['body', 'org', 'repo', 'build', 'step']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -940,14 +940,14 @@ class StepsApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_step`")  # noqa: E501
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `update_step`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `update_step`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `update_step`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -960,10 +960,10 @@ class StepsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
         if 'step' in params:
@@ -1006,19 +1006,19 @@ class StepsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_step_log(self, body, repo, org, build, step, **kwargs):  # noqa: E501
+    def update_step_log(self, body, org, repo, build, step, **kwargs):  # noqa: E501
         """update_step_log  # noqa: E501
 
         Update the logs for a step  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_step_log(body, repo, org, build, step, async_req=True)
+        >>> thread = api.update_step_log(body, org, repo, build, step, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Log body: Payload containing the log to update (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param str step: Build number (required)
         :return: Log
@@ -1027,24 +1027,24 @@ class StepsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_step_log_with_http_info(body, repo, org, build, step, **kwargs)  # noqa: E501
+            return self.update_step_log_with_http_info(body, org, repo, build, step, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_step_log_with_http_info(body, repo, org, build, step, **kwargs)  # noqa: E501
+            (data) = self.update_step_log_with_http_info(body, org, repo, build, step, **kwargs)  # noqa: E501
             return data
 
-    def update_step_log_with_http_info(self, body, repo, org, build, step, **kwargs):  # noqa: E501
+    def update_step_log_with_http_info(self, body, org, repo, build, step, **kwargs):  # noqa: E501
         """update_step_log  # noqa: E501
 
         Update the logs for a step  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_step_log_with_http_info(body, repo, org, build, step, async_req=True)
+        >>> thread = api.update_step_log_with_http_info(body, org, repo, build, step, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Log body: Payload containing the log to update (required)
-        :param str repo: Name of the repo (required)
         :param str org: Name of the org (required)
+        :param str repo: Name of the repo (required)
         :param int build: Build number (required)
         :param str step: Build number (required)
         :return: Log
@@ -1052,7 +1052,7 @@ class StepsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['body', 'repo', 'org', 'build', 'step']  # noqa: E501
+        all_params = ['body', 'org', 'repo', 'build', 'step']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1071,14 +1071,14 @@ class StepsApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_step_log`")  # noqa: E501
-        # verify the required parameter 'repo' is set
-        if ('repo' not in params or
-                params['repo'] is None):
-            raise ValueError("Missing the required parameter `repo` when calling `update_step_log`")  # noqa: E501
         # verify the required parameter 'org' is set
         if ('org' not in params or
                 params['org'] is None):
             raise ValueError("Missing the required parameter `org` when calling `update_step_log`")  # noqa: E501
+        # verify the required parameter 'repo' is set
+        if ('repo' not in params or
+                params['repo'] is None):
+            raise ValueError("Missing the required parameter `repo` when calling `update_step_log`")  # noqa: E501
         # verify the required parameter 'build' is set
         if ('build' not in params or
                 params['build'] is None):
@@ -1091,10 +1091,10 @@ class StepsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'repo' in params:
-            path_params['repo'] = params['repo']  # noqa: E501
         if 'org' in params:
             path_params['org'] = params['org']  # noqa: E501
+        if 'repo' in params:
+            path_params['repo'] = params['repo']  # noqa: E501
         if 'build' in params:
             path_params['build'] = params['build']  # noqa: E501
         if 'step' in params:

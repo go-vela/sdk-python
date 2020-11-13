@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**update_repo**](ReposApi.md#update_repo) | **PUT** /api/v1/repos/{org}/{repo} | 
 
 # **chown_repo**
-> str chown_repo(repo, org)
+> str chown_repo(org, repo)
 
 
 
@@ -35,11 +35,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.ReposApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 
 try:
-    api_response = api_instance.chown_repo(repo, org)
+    api_response = api_instance.chown_repo(org, repo)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReposApi->chown_repo: %s\n" % e)
@@ -49,8 +49,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
 
 ### Return type
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_repo**
-> str delete_repo(repo, org)
+> str delete_repo(org, repo)
 
 
 
@@ -143,11 +143,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.ReposApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 
 try:
-    api_response = api_instance.delete_repo(repo, org)
+    api_response = api_instance.delete_repo(org, repo)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReposApi->delete_repo: %s\n" % e)
@@ -157,8 +157,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
 
 ### Return type
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_repo**
-> Repo get_repo(repo, org)
+> Repo get_repo(org, repo)
 
 
 
@@ -198,11 +198,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.ReposApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 
 try:
-    api_response = api_instance.get_repo(repo, org)
+    api_response = api_instance.get_repo(org, repo)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReposApi->get_repo: %s\n" % e)
@@ -212,8 +212,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
 
 ### Return type
 
@@ -280,7 +280,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **repair_repo**
-> str repair_repo(repo, org)
+> str repair_repo(org, repo)
 
 
 
@@ -302,11 +302,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = vela.ReposApi(vela.ApiClient(configuration))
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 
 try:
-    api_response = api_instance.repair_repo(repo, org)
+    api_response = api_instance.repair_repo(org, repo)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReposApi->repair_repo: %s\n" % e)
@@ -316,8 +316,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
 
 ### Return type
 
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_repo**
-> Repo update_repo(body, repo, org)
+> Repo update_repo(body, org, repo)
 
 
 
@@ -358,11 +358,11 @@ configuration.api_key['Authorization'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = vela.ReposApi(vela.ApiClient(configuration))
 body = vela.Repo() # Repo | Payload containing the repo to update
-repo = 'repo_example' # str | Name of the repo
 org = 'org_example' # str | Name of the org
+repo = 'repo_example' # str | Name of the repo
 
 try:
-    api_response = api_instance.update_repo(body, repo, org)
+    api_response = api_instance.update_repo(body, org, repo)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ReposApi->update_repo: %s\n" % e)
@@ -373,8 +373,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Repo**](Repo.md)| Payload containing the repo to update | 
- **repo** | **str**| Name of the repo | 
  **org** | **str**| Name of the org | 
+ **repo** | **str**| Name of the repo | 
 
 ### Return type
 

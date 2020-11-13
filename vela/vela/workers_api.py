@@ -34,47 +34,45 @@ class WorkersApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_worker(self, body, authorization, **kwargs):  # noqa: E501
+    def create_worker(self, body, **kwargs):  # noqa: E501
         """create_worker  # noqa: E501
 
         Create a worker for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_worker(body, authorization, async_req=True)
+        >>> thread = api.create_worker(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Worker body: Payload containing the worker to create (required)
-        :param str authorization: Vela bearer token (required)
         :return: Worker
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.create_worker_with_http_info(body, authorization, **kwargs)  # noqa: E501
+            return self.create_worker_with_http_info(body, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_worker_with_http_info(body, authorization, **kwargs)  # noqa: E501
+            (data) = self.create_worker_with_http_info(body, **kwargs)  # noqa: E501
             return data
 
-    def create_worker_with_http_info(self, body, authorization, **kwargs):  # noqa: E501
+    def create_worker_with_http_info(self, body, **kwargs):  # noqa: E501
         """create_worker  # noqa: E501
 
         Create a worker for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_worker_with_http_info(body, authorization, async_req=True)
+        >>> thread = api.create_worker_with_http_info(body, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Worker body: Payload containing the worker to create (required)
-        :param str authorization: Vela bearer token (required)
         :return: Worker
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'authorization']  # noqa: E501
+        all_params = ['body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -93,10 +91,6 @@ class WorkersApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `create_worker`")  # noqa: E501
-        # verify the required parameter 'authorization' is set
-        if ('authorization' not in params or
-                params['authorization'] is None):
-            raise ValueError("Missing the required parameter `authorization` when calling `create_worker`")  # noqa: E501
 
         collection_formats = {}
 
@@ -105,8 +99,6 @@ class WorkersApi(object):
         query_params = []
 
         header_params = {}
-        if 'authorization' in params:
-            header_params['Authorization'] = params['authorization']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -123,7 +115,7 @@ class WorkersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/workers', 'POST',
@@ -141,47 +133,45 @@ class WorkersApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_worker(self, worker, authorization, **kwargs):  # noqa: E501
+    def delete_worker(self, worker, **kwargs):  # noqa: E501
         """delete_worker  # noqa: E501
 
         Delete a worker for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_worker(worker, authorization, async_req=True)
+        >>> thread = api.delete_worker(worker, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str worker: Name of the worker (required)
-        :param str authorization: Vela bearer token (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.delete_worker_with_http_info(worker, authorization, **kwargs)  # noqa: E501
+            return self.delete_worker_with_http_info(worker, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_worker_with_http_info(worker, authorization, **kwargs)  # noqa: E501
+            (data) = self.delete_worker_with_http_info(worker, **kwargs)  # noqa: E501
             return data
 
-    def delete_worker_with_http_info(self, worker, authorization, **kwargs):  # noqa: E501
+    def delete_worker_with_http_info(self, worker, **kwargs):  # noqa: E501
         """delete_worker  # noqa: E501
 
         Delete a worker for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_worker_with_http_info(worker, authorization, async_req=True)
+        >>> thread = api.delete_worker_with_http_info(worker, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str worker: Name of the worker (required)
-        :param str authorization: Vela bearer token (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['worker', 'authorization']  # noqa: E501
+        all_params = ['worker']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -200,10 +190,6 @@ class WorkersApi(object):
         if ('worker' not in params or
                 params['worker'] is None):
             raise ValueError("Missing the required parameter `worker` when calling `delete_worker`")  # noqa: E501
-        # verify the required parameter 'authorization' is set
-        if ('authorization' not in params or
-                params['authorization'] is None):
-            raise ValueError("Missing the required parameter `authorization` when calling `delete_worker`")  # noqa: E501
 
         collection_formats = {}
 
@@ -214,8 +200,6 @@ class WorkersApi(object):
         query_params = []
 
         header_params = {}
-        if 'authorization' in params:
-            header_params['Authorization'] = params['authorization']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -226,7 +210,7 @@ class WorkersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/workers/{worker}', 'DELETE',
@@ -244,47 +228,45 @@ class WorkersApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_worker(self, worker, authorization, **kwargs):  # noqa: E501
+    def get_worker(self, worker, **kwargs):  # noqa: E501
         """get_worker  # noqa: E501
 
         Retrieve a worker for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_worker(worker, authorization, async_req=True)
+        >>> thread = api.get_worker(worker, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str worker: Hostname of the worker (required)
-        :param str authorization: Vela bearer token (required)
         :return: Worker
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.get_worker_with_http_info(worker, authorization, **kwargs)  # noqa: E501
+            return self.get_worker_with_http_info(worker, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_worker_with_http_info(worker, authorization, **kwargs)  # noqa: E501
+            (data) = self.get_worker_with_http_info(worker, **kwargs)  # noqa: E501
             return data
 
-    def get_worker_with_http_info(self, worker, authorization, **kwargs):  # noqa: E501
+    def get_worker_with_http_info(self, worker, **kwargs):  # noqa: E501
         """get_worker  # noqa: E501
 
         Retrieve a worker for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_worker_with_http_info(worker, authorization, async_req=True)
+        >>> thread = api.get_worker_with_http_info(worker, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str worker: Hostname of the worker (required)
-        :param str authorization: Vela bearer token (required)
         :return: Worker
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['worker', 'authorization']  # noqa: E501
+        all_params = ['worker']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -303,10 +285,6 @@ class WorkersApi(object):
         if ('worker' not in params or
                 params['worker'] is None):
             raise ValueError("Missing the required parameter `worker` when calling `get_worker`")  # noqa: E501
-        # verify the required parameter 'authorization' is set
-        if ('authorization' not in params or
-                params['authorization'] is None):
-            raise ValueError("Missing the required parameter `authorization` when calling `get_worker`")  # noqa: E501
 
         collection_formats = {}
 
@@ -317,8 +295,6 @@ class WorkersApi(object):
         query_params = []
 
         header_params = {}
-        if 'authorization' in params:
-            header_params['Authorization'] = params['authorization']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -329,7 +305,7 @@ class WorkersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/workers/{worker}', 'GET',
@@ -442,18 +418,17 @@ class WorkersApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_worker(self, body, authorization, worker, **kwargs):  # noqa: E501
+    def update_worker(self, body, worker, **kwargs):  # noqa: E501
         """update_worker  # noqa: E501
 
         Update a worker for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_worker(body, authorization, worker, async_req=True)
+        >>> thread = api.update_worker(body, worker, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Worker body: Payload containing the worker to update (required)
-        :param str authorization: Vela bearer token (required)
         :param str worker: Name of the worker (required)
         :return: Worker
                  If the method is called asynchronously,
@@ -461,30 +436,29 @@ class WorkersApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.update_worker_with_http_info(body, authorization, worker, **kwargs)  # noqa: E501
+            return self.update_worker_with_http_info(body, worker, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_worker_with_http_info(body, authorization, worker, **kwargs)  # noqa: E501
+            (data) = self.update_worker_with_http_info(body, worker, **kwargs)  # noqa: E501
             return data
 
-    def update_worker_with_http_info(self, body, authorization, worker, **kwargs):  # noqa: E501
+    def update_worker_with_http_info(self, body, worker, **kwargs):  # noqa: E501
         """update_worker  # noqa: E501
 
         Update a worker for the configured backend  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_worker_with_http_info(body, authorization, worker, async_req=True)
+        >>> thread = api.update_worker_with_http_info(body, worker, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param Worker body: Payload containing the worker to update (required)
-        :param str authorization: Vela bearer token (required)
         :param str worker: Name of the worker (required)
         :return: Worker
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'authorization', 'worker']  # noqa: E501
+        all_params = ['body', 'worker']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -503,10 +477,6 @@ class WorkersApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_worker`")  # noqa: E501
-        # verify the required parameter 'authorization' is set
-        if ('authorization' not in params or
-                params['authorization'] is None):
-            raise ValueError("Missing the required parameter `authorization` when calling `update_worker`")  # noqa: E501
         # verify the required parameter 'worker' is set
         if ('worker' not in params or
                 params['worker'] is None):
@@ -521,8 +491,6 @@ class WorkersApi(object):
         query_params = []
 
         header_params = {}
-        if 'authorization' in params:
-            header_params['Authorization'] = params['authorization']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -539,7 +507,7 @@ class WorkersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['ApiKeyAuth']  # noqa: E501
 
         return self.api_client.call_api(
             '/api/v1/workers/{worker}', 'PUT',
