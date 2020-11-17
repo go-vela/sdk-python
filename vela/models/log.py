@@ -31,7 +31,7 @@ class Log(object):
     """
     swagger_types = {
         'build_id': 'int',
-        'data': 'list[int]',
+        'data': 'str',
         'id': 'int',
         'repo_id': 'int',
         'service_id': 'int',
@@ -96,7 +96,7 @@ class Log(object):
 
 
         :return: The data of this Log.  # noqa: E501
-        :rtype: list[int]
+        :rtype: str
         """
         return self._data
 
@@ -106,7 +106,7 @@ class Log(object):
 
 
         :param data: The data of this Log.  # noqa: E501
-        :type: list[int]
+        :type: str
         """
 
         self._data = data
