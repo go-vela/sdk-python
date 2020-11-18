@@ -21,6 +21,7 @@ from vela.vela.admin_api import AdminApi
 from vela.vela.authenticate_api import AuthenticateApi
 from vela.vela.builds_api import BuildsApi
 from vela.vela.deployment_api import DeploymentApi
+from vela.vela.pipelines_api import PipelinesApi
 from vela.vela.repos_api import ReposApi
 from vela.vela.router_api import RouterApi
 from vela.vela.secrets_api import SecretsApi
@@ -55,6 +56,7 @@ from vela.models.stage_slice import StageSlice
 from vela.models.step import Step
 from vela.models.step_secret import StepSecret
 from vela.models.step_secret_slice import StepSecretSlice
+from vela.models.template import Template
 from vela.models.ulimit import Ulimit
 from vela.models.ulimit_slice import UlimitSlice
 from vela.models.user import User

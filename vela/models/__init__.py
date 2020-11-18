@@ -38,6 +38,7 @@ from vela.models.stage_slice import StageSlice
 from vela.models.step import Step
 from vela.models.step_secret import StepSecret
 from vela.models.step_secret_slice import StepSecretSlice
+from vela.models.template import Template
 from vela.models.ulimit import Ulimit
 from vela.models.ulimit_slice import UlimitSlice
 from vela.models.user import User

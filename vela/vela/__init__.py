@@ -7,6 +7,7 @@ from vela.vela.admin_api import AdminApi
 from vela.vela.authenticate_api import AuthenticateApi
 from vela.vela.builds_api import BuildsApi
 from vela.vela.deployment_api import DeploymentApi
+from vela.vela.pipelines_api import PipelinesApi
 from vela.vela.repos_api import ReposApi
 from vela.vela.router_api import RouterApi
 from vela.vela.secrets_api import SecretsApi

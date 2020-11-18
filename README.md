@@ -79,93 +79,99 @@ All URIs are relative to *http://localhost/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AdminApi* | [**admin_all_builds**](docs/AdminApi.md#admin_all_builds) | **GET** /api/v1/admin/builds | 
-*AdminApi* | [**admin_all_deployments**](docs/AdminApi.md#admin_all_deployments) | **GET** /api/v1/admin/deployments | 
-*AdminApi* | [**admin_all_hooks**](docs/AdminApi.md#admin_all_hooks) | **GET** /api/v1/admin/hooks | 
-*AdminApi* | [**admin_all_repos**](docs/AdminApi.md#admin_all_repos) | **GET** /api/v1/admin/repos | 
-*AdminApi* | [**admin_all_secrets**](docs/AdminApi.md#admin_all_secrets) | **GET** /api/v1/admin/secrets | 
-*AdminApi* | [**admin_all_services**](docs/AdminApi.md#admin_all_services) | **GET** /api/v1/admin/services | 
-*AdminApi* | [**admin_all_steps**](docs/AdminApi.md#admin_all_steps) | **GET** /api/v1/admin/steps | 
-*AdminApi* | [**admin_all_users**](docs/AdminApi.md#admin_all_users) | **GET** /api/v1/admin/users | 
-*AdminApi* | [**admin_update_build**](docs/AdminApi.md#admin_update_build) | **PUT** /api/v1/admin/build | 
-*AdminApi* | [**admin_update_deployment**](docs/AdminApi.md#admin_update_deployment) | **PUT** /api/v1/admin/deployment | 
-*AdminApi* | [**admin_update_hook**](docs/AdminApi.md#admin_update_hook) | **PUT** /api/v1/admin/hook | 
-*AdminApi* | [**admin_update_repo**](docs/AdminApi.md#admin_update_repo) | **PUT** /api/v1/admin/repo | 
-*AdminApi* | [**admin_update_secret**](docs/AdminApi.md#admin_update_secret) | **PUT** /api/v1/admin/secret | 
-*AdminApi* | [**admin_update_service**](docs/AdminApi.md#admin_update_service) | **PUT** /api/v1/admin/service | 
-*AdminApi* | [**admin_update_step**](docs/AdminApi.md#admin_update_step) | **PUT** /api/v1/admin/step | 
-*AdminApi* | [**admin_update_user**](docs/AdminApi.md#admin_update_user) | **PUT** /api/v1/admin/user | 
-*AuthenticateApi* | [**get_authenticate**](docs/AuthenticateApi.md#get_authenticate) | **GET** /authenticate | 
-*AuthenticateApi* | [**get_login**](docs/AuthenticateApi.md#get_login) | **GET** /login | 
-*AuthenticateApi* | [**logout**](docs/AuthenticateApi.md#logout) | **GET** /logout | 
-*AuthenticateApi* | [**post_authenticate**](docs/AuthenticateApi.md#post_authenticate) | **POST** /authenticate | 
-*AuthenticateApi* | [**post_login**](docs/AuthenticateApi.md#post_login) | **POST** /login | 
-*BuildsApi* | [**create_build**](docs/BuildsApi.md#create_build) | **POST** /api/v1/repos/{org}/{repo}/builds | 
-*BuildsApi* | [**delete_build**](docs/BuildsApi.md#delete_build) | **DELETE** /api/v1/repos/{org}/{repo}/builds/{build} | 
-*BuildsApi* | [**get_build**](docs/BuildsApi.md#get_build) | **GET** /api/v1/repos/{org}/{repo}/builds/{build} | 
-*BuildsApi* | [**get_build_logs**](docs/BuildsApi.md#get_build_logs) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/logs | 
-*BuildsApi* | [**get_builds**](docs/BuildsApi.md#get_builds) | **GET** /api/v1/repos/{org}/{repo}/builds | 
-*BuildsApi* | [**get_org_builds**](docs/BuildsApi.md#get_org_builds) | **GET** /api/v1/repos/{org} | 
-*BuildsApi* | [**restart_build**](docs/BuildsApi.md#restart_build) | **POST** /api/v1/repos/{org}/{repo}/builds/{build} | 
-*BuildsApi* | [**update_build**](docs/BuildsApi.md#update_build) | **PUT** /api/v1/repos/{org}/{repo}/builds/{build} | 
-*DeploymentApi* | [**create_deployment**](docs/DeploymentApi.md#create_deployment) | **POST** /api/v1/deployments/{org}/{repo} | 
-*DeploymentApi* | [**delete_hooks**](docs/DeploymentApi.md#delete_hooks) | **DELETE** /api/v1/hooks/{org}/{repo}/{hook} | 
-*DeploymentApi* | [**get_deployment**](docs/DeploymentApi.md#get_deployment) | **GET** /api/v1/deployments/{org}/{repo}/{deployment} | 
-*DeploymentApi* | [**get_deployments**](docs/DeploymentApi.md#get_deployments) | **GET** /api/v1/deployments/{org}/{repo} | 
-*DeploymentApi* | [**get_hook**](docs/DeploymentApi.md#get_hook) | **GET** /api/v1/hooks/{org}/{repo}/{hook} | 
-*DeploymentApi* | [**get_hooks**](docs/DeploymentApi.md#get_hooks) | **GET** /api/v1/hooks/{org}/{repo} | 
-*ReposApi* | [**chown_repo**](docs/ReposApi.md#chown_repo) | **PATCH** /api/v1/repos/{org}/{repo}/chown | 
-*ReposApi* | [**create_repo**](docs/ReposApi.md#create_repo) | **POST** /api/v1/repos | 
-*ReposApi* | [**delete_repo**](docs/ReposApi.md#delete_repo) | **DELETE** /api/v1/repos/{org}/{repo} | 
-*ReposApi* | [**get_repo**](docs/ReposApi.md#get_repo) | **GET** /api/v1/repos/{org}/{repo} | 
-*ReposApi* | [**get_repos**](docs/ReposApi.md#get_repos) | **GET** /api/v1/repos | 
-*ReposApi* | [**repair_repo**](docs/ReposApi.md#repair_repo) | **PATCH** /api/v1/repos/{org}/{repo}/repair | 
-*ReposApi* | [**update_repo**](docs/ReposApi.md#update_repo) | **PUT** /api/v1/repos/{org}/{repo} | 
-*RouterApi* | [**base_metrics**](docs/RouterApi.md#base_metrics) | **GET** /metrics | 
-*RouterApi* | [**get_badge**](docs/RouterApi.md#get_badge) | **GET** /badge/{org}/{repo}/status.svg | 
-*RouterApi* | [**health**](docs/RouterApi.md#health) | **GET** /health | 
-*RouterApi* | [**post_webhook**](docs/RouterApi.md#post_webhook) | **POST** /webhook | 
-*RouterApi* | [**version**](docs/RouterApi.md#version) | **GET** /version | 
-*SecretsApi* | [**create_secret**](docs/SecretsApi.md#create_secret) | **POST** /api/v1/secrets/{engine}/{type}/{org}/{name} | 
+*AdminApi* | [**admin_all_builds**](docs/AdminApi.md#admin_all_builds) | **GET** /api/v1/admin/builds |
+*AdminApi* | [**admin_all_deployments**](docs/AdminApi.md#admin_all_deployments) | **GET** /api/v1/admin/deployments |
+*AdminApi* | [**admin_all_hooks**](docs/AdminApi.md#admin_all_hooks) | **GET** /api/v1/admin/hooks |
+*AdminApi* | [**admin_all_repos**](docs/AdminApi.md#admin_all_repos) | **GET** /api/v1/admin/repos |
+*AdminApi* | [**admin_all_secrets**](docs/AdminApi.md#admin_all_secrets) | **GET** /api/v1/admin/secrets |
+*AdminApi* | [**admin_all_services**](docs/AdminApi.md#admin_all_services) | **GET** /api/v1/admin/services |
+*AdminApi* | [**admin_all_steps**](docs/AdminApi.md#admin_all_steps) | **GET** /api/v1/admin/steps |
+*AdminApi* | [**admin_all_users**](docs/AdminApi.md#admin_all_users) | **GET** /api/v1/admin/users |
+*AdminApi* | [**admin_update_build**](docs/AdminApi.md#admin_update_build) | **PUT** /api/v1/admin/build |
+*AdminApi* | [**admin_update_deployment**](docs/AdminApi.md#admin_update_deployment) | **PUT** /api/v1/admin/deployment |
+*AdminApi* | [**admin_update_hook**](docs/AdminApi.md#admin_update_hook) | **PUT** /api/v1/admin/hook |
+*AdminApi* | [**admin_update_repo**](docs/AdminApi.md#admin_update_repo) | **PUT** /api/v1/admin/repo |
+*AdminApi* | [**admin_update_secret**](docs/AdminApi.md#admin_update_secret) | **PUT** /api/v1/admin/secret |
+*AdminApi* | [**admin_update_service**](docs/AdminApi.md#admin_update_service) | **PUT** /api/v1/admin/service |
+*AdminApi* | [**admin_update_step**](docs/AdminApi.md#admin_update_step) | **PUT** /api/v1/admin/step |
+*AdminApi* | [**admin_update_user**](docs/AdminApi.md#admin_update_user) | **PUT** /api/v1/admin/user |
+*AuthenticateApi* | [**get_authenticate**](docs/AuthenticateApi.md#get_authenticate) | **GET** /authenticate |
+*AuthenticateApi* | [**get_login**](docs/AuthenticateApi.md#get_login) | **GET** /login |
+*AuthenticateApi* | [**logout**](docs/AuthenticateApi.md#logout) | **GET** /logout |
+*AuthenticateApi* | [**post_authenticate**](docs/AuthenticateApi.md#post_authenticate) | **POST** /authenticate |
+*AuthenticateApi* | [**post_login**](docs/AuthenticateApi.md#post_login) | **POST** /login |
+*BuildsApi* | [**create_build**](docs/BuildsApi.md#create_build) | **POST** /api/v1/repos/{org}/{repo}/builds |
+*BuildsApi* | [**delete_build**](docs/BuildsApi.md#delete_build) | **DELETE** /api/v1/repos/{org}/{repo}/builds/{build} |
+*BuildsApi* | [**get_build**](docs/BuildsApi.md#get_build) | **GET** /api/v1/repos/{org}/{repo}/builds/{build} |
+*BuildsApi* | [**get_build_logs**](docs/BuildsApi.md#get_build_logs) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/logs |
+*BuildsApi* | [**get_builds**](docs/BuildsApi.md#get_builds) | **GET** /api/v1/repos/{org}/{repo}/builds |
+*BuildsApi* | [**get_org_builds**](docs/BuildsApi.md#get_org_builds) | **GET** /api/v1/repos/{org} |
+*BuildsApi* | [**restart_build**](docs/BuildsApi.md#restart_build) | **POST** /api/v1/repos/{org}/{repo}/builds/{build} |
+*BuildsApi* | [**update_build**](docs/BuildsApi.md#update_build) | **PUT** /api/v1/repos/{org}/{repo}/builds/{build} |
+*DeploymentApi* | [**create_deployment**](docs/DeploymentApi.md#create_deployment) | **POST** /api/v1/deployments/{org}/{repo} |
+*DeploymentApi* | [**delete_hooks**](docs/DeploymentApi.md#delete_hooks) | **DELETE** /api/v1/hooks/{org}/{repo}/{hook} |
+*DeploymentApi* | [**get_deployment**](docs/DeploymentApi.md#get_deployment) | **GET** /api/v1/deployments/{org}/{repo}/{deployment} |
+*DeploymentApi* | [**get_deployments**](docs/DeploymentApi.md#get_deployments) | **GET** /api/v1/deployments/{org}/{repo} |
+*DeploymentApi* | [**get_hook**](docs/DeploymentApi.md#get_hook) | **GET** /api/v1/hooks/{org}/{repo}/{hook} |
+*DeploymentApi* | [**get_hooks**](docs/DeploymentApi.md#get_hooks) | **GET** /api/v1/hooks/{org}/{repo} |
+*PipelinesApi* | [**compile_pipeline**](docs/PipelinesApi.md#compile_pipeline) | **POST** /api/v1/pipelines/{org}/{repo}/compile |
+*PipelinesApi* | [**expand_pipeline**](docs/PipelinesApi.md#expand_pipeline) | **POST** /api/v1/pipelines/{org}/{repo}/expand |
+*PipelinesApi* | [**get_pipeline**](docs/PipelinesApi.md#get_pipeline) | **GET** /api/v1/pipelines/{org}/{repo} |
+*PipelinesApi* | [**get_templates**](docs/PipelinesApi.md#get_templates) | **GET** /api/v1/pipelines/{org}/{repo}/templates |
+*PipelinesApi* | [**validate_pipeline**](docs/PipelinesApi.md#validate_pipeline) | **POST** /api/v1/pipelines/{org}/{repo}/validate |
+*ReposApi* | [**chown_repo**](docs/ReposApi.md#chown_repo) | **PATCH** /api/v1/repos/{org}/{repo}/chown |
+*ReposApi* | [**create_repo**](docs/ReposApi.md#create_repo) | **POST** /api/v1/repos |
+*ReposApi* | [**delete_repo**](docs/ReposApi.md#delete_repo) | **DELETE** /api/v1/repos/{org}/{repo} |
+*ReposApi* | [**get_repo**](docs/ReposApi.md#get_repo) | **GET** /api/v1/repos/{org}/{repo} |
+*ReposApi* | [**get_repos**](docs/ReposApi.md#get_repos) | **GET** /api/v1/repos |
+*ReposApi* | [**repair_repo**](docs/ReposApi.md#repair_repo) | **PATCH** /api/v1/repos/{org}/{repo}/repair |
+*ReposApi* | [**update_repo**](docs/ReposApi.md#update_repo) | **PUT** /api/v1/repos/{org}/{repo} |
+*RouterApi* | [**base_metrics**](docs/RouterApi.md#base_metrics) | **GET** /metrics |
+*RouterApi* | [**get_badge**](docs/RouterApi.md#get_badge) | **GET** /badge/{org}/{repo}/status.svg |
+*RouterApi* | [**health**](docs/RouterApi.md#health) | **GET** /health |
+*RouterApi* | [**post_webhook**](docs/RouterApi.md#post_webhook) | **POST** /webhook |
+*RouterApi* | [**version**](docs/RouterApi.md#version) | **GET** /version |
+*SecretsApi* | [**create_secret**](docs/SecretsApi.md#create_secret) | **POST** /api/v1/secrets/{engine}/{type}/{org}/{name} |
 *SecretsApi* | [**delete_secret**](docs/SecretsApi.md#delete_secret) | **DELETE** /api/v1/secrets/{engine}/{type}/{org}/{name}/{secret} | Delete a secret from the configured backend.
 *SecretsApi* | [**get_secret**](docs/SecretsApi.md#get_secret) | **GET** /api/v1/secrets/{engine}/{type}/{org}/{name}/{secret} | Retrieve a secret from the configured backend.
 *SecretsApi* | [**get_secrets**](docs/SecretsApi.md#get_secrets) | **GET** /api/v1/secrets/{engine}/{type}/{org}/{name} | Retrieve a list of secrets from the configured backend.
 *SecretsApi* | [**update_secrets**](docs/SecretsApi.md#update_secrets) | **PUT** /api/v1/secrets/{engine}/{type}/{org}/{name}/{secret} | Update a secret from the configured backend.
-*ServicesApi* | [**create_service**](docs/ServicesApi.md#create_service) | **POST** /api/v1/repos/{org}/{repo}/builds/{build}/services | 
-*ServicesApi* | [**create_service_logs**](docs/ServicesApi.md#create_service_logs) | **POST** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service}/logs | 
-*ServicesApi* | [**delete_service**](docs/ServicesApi.md#delete_service) | **DELETE** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service} | 
-*ServicesApi* | [**delete_service_logs**](docs/ServicesApi.md#delete_service_logs) | **DELETE** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service}/logs | 
-*ServicesApi* | [**get_service**](docs/ServicesApi.md#get_service) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service} | 
-*ServicesApi* | [**get_service_logs**](docs/ServicesApi.md#get_service_logs) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service}/logs | 
-*ServicesApi* | [**get_services**](docs/ServicesApi.md#get_services) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/services | 
-*ServicesApi* | [**update_service**](docs/ServicesApi.md#update_service) | **PUT** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service} | 
-*ServicesApi* | [**update_service_log**](docs/ServicesApi.md#update_service_log) | **PUT** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service}/logs | 
-*StepsApi* | [**create_step**](docs/StepsApi.md#create_step) | **POST** /api/v1/repos/{org}/{repo}/builds/{build}/steps | 
-*StepsApi* | [**create_step_log**](docs/StepsApi.md#create_step_log) | **POST** /api/v1/repos/{org}/{repo}/builds/{build}/steps/{step}/logs | 
-*StepsApi* | [**delete_step**](docs/StepsApi.md#delete_step) | **DELETE** /api/v1/repos/{org}/{repo}/builds/{build}/steps/{step} | 
-*StepsApi* | [**delete_step_log**](docs/StepsApi.md#delete_step_log) | **DELETE** /api/v1/repos/{org}/{repo}/builds/{build}/steps/{step}/logs | 
-*StepsApi* | [**get_step**](docs/StepsApi.md#get_step) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/steps/{step} | 
-*StepsApi* | [**get_step_log**](docs/StepsApi.md#get_step_log) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/steps/{step}/logs | 
-*StepsApi* | [**get_steps**](docs/StepsApi.md#get_steps) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/steps | 
-*StepsApi* | [**update_step**](docs/StepsApi.md#update_step) | **PUT** /api/v1/repos/{org}/{repo}/builds/{build}/steps/{step} | 
-*StepsApi* | [**update_step_log**](docs/StepsApi.md#update_step_log) | **PUT** /api/v1/repos/{org}/{repo}/builds/{build}/steps/{step}/logs | 
-*UsersApi* | [**create_token**](docs/UsersApi.md#create_token) | **POST** /api/v1/user/token | 
-*UsersApi* | [**create_user**](docs/UsersApi.md#create_user) | **POST** /api/v1/users | 
-*UsersApi* | [**delete_token**](docs/UsersApi.md#delete_token) | **DELETE** /api/v1/user/token | 
-*UsersApi* | [**delete_user**](docs/UsersApi.md#delete_user) | **DELETE** /api/v1/users/{user} | 
-*UsersApi* | [**get_current_user**](docs/UsersApi.md#get_current_user) | **GET** /api/v1/user | 
-*UsersApi* | [**get_user**](docs/UsersApi.md#get_user) | **GET** /api/v1/users/{user} | 
-*UsersApi* | [**get_user_source_repos**](docs/UsersApi.md#get_user_source_repos) | **GET** /api/v1/user/source/repos | 
-*UsersApi* | [**get_users**](docs/UsersApi.md#get_users) | **GET** /api/v1/users | 
-*UsersApi* | [**update_current_user**](docs/UsersApi.md#update_current_user) | **PUT** /api/v1/user | 
-*UsersApi* | [**update_user**](docs/UsersApi.md#update_user) | **PUT** /api/v1/users/{user} | 
-*WebhookApi* | [**create_hook**](docs/WebhookApi.md#create_hook) | **POST** /api/v1/hooks/{org}/{repo} | 
-*WebhookApi* | [**update_hook**](docs/WebhookApi.md#update_hook) | **PUT** /api/v1/hooks/{org}/{repo}/{hook} | 
-*WorkersApi* | [**create_worker**](docs/WorkersApi.md#create_worker) | **POST** /api/v1/workers | 
-*WorkersApi* | [**delete_worker**](docs/WorkersApi.md#delete_worker) | **DELETE** /api/v1/workers/{worker} | 
-*WorkersApi* | [**get_worker**](docs/WorkersApi.md#get_worker) | **GET** /api/v1/workers/{worker} | 
-*WorkersApi* | [**get_workers**](docs/WorkersApi.md#get_workers) | **GET** /api/v1/workers | 
+*ServicesApi* | [**create_service**](docs/ServicesApi.md#create_service) | **POST** /api/v1/repos/{org}/{repo}/builds/{build}/services |
+*ServicesApi* | [**create_service_logs**](docs/ServicesApi.md#create_service_logs) | **POST** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service}/logs |
+*ServicesApi* | [**delete_service**](docs/ServicesApi.md#delete_service) | **DELETE** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service} |
+*ServicesApi* | [**delete_service_logs**](docs/ServicesApi.md#delete_service_logs) | **DELETE** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service}/logs |
+*ServicesApi* | [**get_service**](docs/ServicesApi.md#get_service) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service} |
+*ServicesApi* | [**get_service_logs**](docs/ServicesApi.md#get_service_logs) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service}/logs |
+*ServicesApi* | [**get_services**](docs/ServicesApi.md#get_services) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/services |
+*ServicesApi* | [**update_service**](docs/ServicesApi.md#update_service) | **PUT** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service} |
+*ServicesApi* | [**update_service_log**](docs/ServicesApi.md#update_service_log) | **PUT** /api/v1/repos/{org}/{repo}/builds/{build}/services/{service}/logs |
+*StepsApi* | [**create_step**](docs/StepsApi.md#create_step) | **POST** /api/v1/repos/{org}/{repo}/builds/{build}/steps |
+*StepsApi* | [**create_step_log**](docs/StepsApi.md#create_step_log) | **POST** /api/v1/repos/{org}/{repo}/builds/{build}/steps/{step}/logs |
+*StepsApi* | [**delete_step**](docs/StepsApi.md#delete_step) | **DELETE** /api/v1/repos/{org}/{repo}/builds/{build}/steps/{step} |
+*StepsApi* | [**delete_step_log**](docs/StepsApi.md#delete_step_log) | **DELETE** /api/v1/repos/{org}/{repo}/builds/{build}/steps/{step}/logs |
+*StepsApi* | [**get_step**](docs/StepsApi.md#get_step) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/steps/{step} |
+*StepsApi* | [**get_step_log**](docs/StepsApi.md#get_step_log) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/steps/{step}/logs |
+*StepsApi* | [**get_steps**](docs/StepsApi.md#get_steps) | **GET** /api/v1/repos/{org}/{repo}/builds/{build}/steps |
+*StepsApi* | [**update_step**](docs/StepsApi.md#update_step) | **PUT** /api/v1/repos/{org}/{repo}/builds/{build}/steps/{step} |
+*StepsApi* | [**update_step_log**](docs/StepsApi.md#update_step_log) | **PUT** /api/v1/repos/{org}/{repo}/builds/{build}/steps/{step}/logs |
+*UsersApi* | [**create_token**](docs/UsersApi.md#create_token) | **POST** /api/v1/user/token |
+*UsersApi* | [**create_user**](docs/UsersApi.md#create_user) | **POST** /api/v1/users |
+*UsersApi* | [**delete_token**](docs/UsersApi.md#delete_token) | **DELETE** /api/v1/user/token |
+*UsersApi* | [**delete_user**](docs/UsersApi.md#delete_user) | **DELETE** /api/v1/users/{user} |
+*UsersApi* | [**get_current_user**](docs/UsersApi.md#get_current_user) | **GET** /api/v1/user |
+*UsersApi* | [**get_user**](docs/UsersApi.md#get_user) | **GET** /api/v1/users/{user} |
+*UsersApi* | [**get_user_source_repos**](docs/UsersApi.md#get_user_source_repos) | **GET** /api/v1/user/source/repos |
+*UsersApi* | [**get_users**](docs/UsersApi.md#get_users) | **GET** /api/v1/users |
+*UsersApi* | [**update_current_user**](docs/UsersApi.md#update_current_user) | **PUT** /api/v1/user |
+*UsersApi* | [**update_user**](docs/UsersApi.md#update_user) | **PUT** /api/v1/users/{user} |
+*WebhookApi* | [**create_hook**](docs/WebhookApi.md#create_hook) | **POST** /api/v1/hooks/{org}/{repo} |
+*WebhookApi* | [**update_hook**](docs/WebhookApi.md#update_hook) | **PUT** /api/v1/hooks/{org}/{repo}/{hook} |
+*WorkersApi* | [**create_worker**](docs/WorkersApi.md#create_worker) | **POST** /api/v1/workers |
+*WorkersApi* | [**delete_worker**](docs/WorkersApi.md#delete_worker) | **DELETE** /api/v1/workers/{worker} |
+*WorkersApi* | [**get_worker**](docs/WorkersApi.md#get_worker) | **GET** /api/v1/workers/{worker} |
+*WorkersApi* | [**get_workers**](docs/WorkersApi.md#get_workers) | **GET** /api/v1/workers |
 *WorkersApi* | [**update_worker**](docs/WorkersApi.md#update_worker) | **PUT** /api/v1/workers/{worker} |
+
 
 ## Documentation For Models
 
@@ -191,6 +197,7 @@ Class | Method | HTTP request | Description
  - [Step](docs/Step.md)
  - [StepSecret](docs/StepSecret.md)
  - [StepSecretSlice](docs/StepSecretSlice.md)
+ - [Template](docs/Template.md)
  - [Ulimit](docs/Ulimit.md)
  - [UlimitSlice](docs/UlimitSlice.md)
  - [User](docs/User.md)
