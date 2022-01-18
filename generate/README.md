@@ -10,5 +10,4 @@ Then ensure you have the swagger-codegen command installed:
 
 Then run:
 
-`swagger-codegen generate -c config.json -l python -i vela.json -o vela
-find vela -name \*.py -exec sed -i 's/# coding: utf-8/# coding: utf-8\n#\n# Copyright (c) 2021 Target Brands, Inc. All rights reserved./' \{\} +`
+`swagger-codegen generate -c config.json -l python -i vela.json -o vela find vela -name \*.py -exec sed -i 's/# coding: utf-8/# coding: utf-8\n#\n# Copyright (c) 2022 Target Brands, Inc. All rights reserved./' \{\} +`

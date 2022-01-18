@@ -1,6 +1,6 @@
 # coding: utf-8
 #
-# Copyright (c) 2021 Target Brands, Inc. All rights reserved.
+# Copyright (c) 2022 Target Brands, Inc. All rights reserved.
 
 # flake8: noqa
 
