@@ -1,5 +1,5 @@
 certifi==2022.5.18.1
 six==1.16.0
 python_dateutil==2.8.2
-setuptools==62.3.3
+setuptools==62.5.0
 urllib3==1.26.9
